@@ -1,0 +1,99 @@
+---
+settings:
+  name: AppTemplate
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: ja-jp,us-en,zh-cn,ko-kr
+sidebar:
+  entries:
+  - title: Cloud Manager のすべてのドキュメント
+    url: https://docs.netapp.com/us-en/cloud-manager-family
+  - title: アプリケーションテンプレートドキュメント
+    url: "/index.html"
+  - title: リリースノート
+    url: "/whats-new.html"
+  - title: はじめに
+    entries:
+    - title: アプリケーションテンプレートについて説明します
+      url: "/concept-resource-templates.html"
+    - title: タグ付けの詳細をご覧ください
+      url: "/concept-tagging.html"
+  - title: アプリケーションテンプレートを使用します
+    entries:
+    - title: テンプレートを使用して、リソース作成を標準化します
+      entries:
+      - title: 組織のテンプレートを作成します
+        url: "/task-define-templates.html"
+      - title: テンプレートのコンプライアンスについては、リソースを確認してください
+        url: "/task-check-template-compliance.html"
+      - title: テンプレートを実行してリソースを作成する
+        url: "/task-run-templates.html"
+    - title: タグを使用してリソースを整理します
+      entries:
+      - title: リソースのタグを管理します
+        url: "/task-using-tags.html"
+  - title: 概念
+    entries:
+    - title: テンプレートのビルディングブロック
+      url: "/reference-template-building-blocks.html"
+  - title: 知識とサポート
+    entries:
+    - title: サポートに登録します
+      url: "/task-support-registration.html"
+    - title: ヘルプを表示します
+      url: "/task-get-help.html"
+  - title: 法的通知
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: はじめに
+    links:
+    - title: アプリケーションテンプレートについては、こちらをご覧ください
+      url: concept-resource-templates.html
+    - title: タグ付けの詳細はこちら
+      url: concept-tagging.html
+    - title: 新機能
+      url: whats-new.html
+  - title: テンプレートを作成します
+    links:
+    - title: Cloud Volumes ONTAP 作業環境
+      url: task-define-templates.html#create-a-template-for-a-cloud-volumes-ontap-working-environment
+    - title: Cloud Volumes ONTAP ボリューム
+      url: task-define-templates.html#create-a-template-for-a-cloud-volumes-ontap-volume
+    - title: Azure NetApp Files ボリューム
+      url: task-define-templates.html#create-a-template-for-an-azure-netapp-files-volume
+    - title: オンプレミスの ONTAP ボリューム
+      url: task-define-templates.html#create-a-template-for-an-on-premises-ontap-volume
+    - title: ボリュームにバックアップ機能を追加します
+      url: task-define-templates.html#add-backup-functionality-to-a-volume
+    - title: データセンス機能をボリュームに追加します
+      url: task-define-templates.html#add-data-sense-functionality-to-a-volume
+    - title: ボリュームにレプリケーション機能を追加します
+      url: task-define-templates.html#add-replication-functionality-to-a-volume
+  - title: テンプレートを使用してリソースを作成する
+    links:
+    - title: Cloud Volumes ONTAP 作業環境
+      url: task-run-templates.html#select-and-run-a-working-environment-template
+    - title: CVO 、オンプレミス、 ANF のボリューム
+      url: task-run-templates.html#select-and-run-a-volume-template
+  - title: テンプレートとタグを使用してリソースを管理します
+    links:
+    - title: テンプレートへの準拠（ドリフト）のためのリソースの確認
+      url: task-check-template-compliance.html
+    - title: 既存のリソースを検出するテンプレートを実行します
+      url: task-run-templates.html#select-and-run-a-template-that-finds-existing-resources
+    - title: リソースのタグを管理します
+      url: task-using-tags.html
+  - title: ブログコミュニティ
+    links:
+    - title: ネットアップコミュニティ
+      url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
+    - title: Cloud Central のブログです
+      url: https://cloud.netapp.com/blog
+    - title: クラウドに関する Web セミナー
+      url: https://cloud.netapp.com/events
+product-family: {}

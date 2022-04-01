@@ -1,0 +1,15 @@
+---
+layout: astra 
+sidebar: sidebar 
+permalink: index.html 
+lead: The Application Template service enables you to standardize resource creation for your Cloud Manager working environments. 
+summary: Application Template サービスを使用すると、 Cloud Manager の作業環境向けにリソースの作成を標準化できます。 
+---
+= AppTemplate のドキュメント
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+

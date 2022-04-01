@@ -1,0 +1,181 @@
+---
+sidebar: sidebar 
+permalink: concept-tagging.html 
+keywords: tags, overview, conceptual, resource tags, volume tags, AWS tags, Azure tags 
+summary: Cloud Manager では、タグを _existing_resources に適用して、これらのリソースの編成と管理を容易にすることができます。タグは、リソースをグループ化してアプリケーション、環境、リージョン、課金コード、クラウドプロバイダを識別するために使用できるメタデータです。 その他。 
+---
+= タグ付けの詳細をご覧ください
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager では、タグを _existing_resources に適用して、これらのリソースの編成と管理を容易にすることができます。タグは、リソースをグループ化してアプリケーション、環境、リージョン、課金コード、クラウドプロバイダを識別するために使用できるメタデータです。 その他。
+
+タグは、 * タグキー * と * タグ値 * で構成されます。たとえば、「 Environment 」というタグキーを作成し、「 Production 」および「 Test 」のタグ値を追加できます。リソースに適用したら、キーと値のペアに一致するリソースをすばやく検索して表示できます。
+
+作業環境または Azure NetApp Files ボリュームを作成するときに、タグキーと値のペアを _new_resources に追加できます。でタグキーと値のペアを定義することもできます link:task-define-templates.html["作成する Cloud Manager テンプレート"] ストレージ管理者や DevOps エンジニアの方に最適です。
+
+タグ付けサービスを使用して新しいタグを追加したり、既存のタグを変更または削除したりできます。
+
+
+
+== の機能
+
+Tagging サービスには、次の機能とメリットがあります。
+
+* 環境で使用する用語に一致するタグキーとタグ値を作成します
+* 環境内のリソースを整理して監視と管理を簡易化する
+* リソースタイプごとにタグキーとタグ値を追加、削除、および編集します
+* AWS や Azure から、環境内の ONTAP のリソースとリソースにタグを付けましょう。
+
+
+
+
+== 価格とライセンス
+
+リソースにタグを付ける機能にはライセンスは必要なく、 Account Admin または Workspace Admin のロールを持つすべての Cloud Manager ユーザが無償で使用できます。
+
+
+
+== タグ付け可能なリソース
+
+タグは次のリソースに適用できます。
+
+[cols="30,35,35"]
+|===
+| プロバイダ | サービス | リソース 
+
+
+.3+| ONTAP | Cloud Volumes ONTAP | アグリゲート Storage VM ボリューム 
+
+
+| オンプレミス ONTAP | アグリゲート Storage VM ボリューム 
+
+
+| Azure NetApp Files の特長 | ボリューム 
+
+
+| ネットアップサービス | 同期 | 関係 
+
+
+| AWS | EC2 の場合です | インスタンスセキュリティグループサブネットボリューム VPC 
+
+
+.4+| Azure | コンピューティング | Snapshot 仮想マシン 
+
+
+| ネットワーク | セキュリティグループ仮想ネットワーク 
+
+
+| リソース | リソースグループ 
+
+
+| ストレージ | ストレージアカウント 
+
+
+.2+| GCP | コンピューティング | インスタンス 
+
+
+| ストレージ | バケット 
+|===
+AWS EC2 タグの詳細については、を参照してください https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html["AWS ドキュメント：「 Tagging your Amazon EC2 Resources"^]。
+
+Azure タグの詳細については、を参照してください https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources?tabs=json["Azure ドキュメント：「 Tagging your Azure resources"^]。
+
+Google ラベルについては、を参照してください https://cloud.google.com/compute/docs/labeling-resources["Google Cloud のドキュメント：「 Tagging your Google Cloud resources"^]。
+
+
+
+== 前提条件
+
+
+
+=== AWS Connector の権限を確認します
+
+Cloud Manager バージョン 3.9.10 以降を使用してコネクタを作成した場合は、すべての設定が完了しています。以前のバージョンの Cloud Manager を使用してコネクタを作成していた場合は、 Cloud Manager IAM ロールで AWS EC2 インスタンスにタグ付けするために必要な権限をいくつか追加する必要があります。
+
+[source, json]
+----
+{
+  "Action": [
+    "ec2:CreateTags",
+    "ec2:DeleteTags",
+    "ec2:DescribeTags",
+    "tag:getResources",
+    "tag:getTagKeys",
+    "tag:getTagValues",
+    "tag:TagResources",
+    "tag:UntagResources"
+  ],
+  "Resource": "*",
+  "Effect": "Allow",
+  "Sid": "tagServicePolicy"
+}
+----
+
+
+=== Azure Connector の権限を確認します
+
+Cloud Manager バージョン 3.9.10 以降を使用してコネクタを作成した場合は、すべての設定が完了しています。以前のバージョンの Cloud Manager を使用してコネクタを作成していた場合は、 Azure リソースにタグを付けるために、 Cloud Manager Operator IAM ロールで必要な権限をいくつか追加する必要があります。
+
+[source, json]
+----
+{
+  "id": "<ID>",
+  "properties": {
+    "roleName": "Cloud Manager Operator-<ID>",
+    "description": "Cloud Manager Operator",
+    "assignableScopes": [
+      "/subscriptions/<SUBSCRIPTION-ID>"
+    ],
+    "permissions": [
+      {
+        "actions": [
+          "Microsoft.Resources/tags/read",
+          "Microsoft.Resources/tags/write",
+          "Microsoft.Resources/tags/delete",
+          "Microsoft.ClassicCompute/virtualMachines/read"
+        ],
+        "notActions": [],
+        "dataActions": [],
+        "notDataActions": []
+      }
+    ]
+  }
+}
+----
+
+
+== タグルールと制限
+
+タグキーとタグ値を作成するときは、次のルールが適用されます。
+
+* キーの最大長： 128 文字
+* キー値の最大長： 256 文字
+* タグとタグの有効な値文字：アルファベット、数字、スペース、および特殊文字（ _ 、 @ 、 & 、 * など）
+* タグの大文字と小文字は区別されます。
+* リソースあたりの最大タグ数： 30
+* リソースごとに、各タグキーは一意である必要があります
+
+
+
+
+=== タグの例
+
+[cols="50,50"]
+|===
+| キーを押します | 値 
+
+
+| 環境 | 本番テスト 
+
+
+| 部門 / 施設 | ファイナンスセールスエンジニアリング 
+
+
+| オーナー | 管理ストレージ 
+|===
