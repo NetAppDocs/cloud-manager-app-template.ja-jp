@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head class="at-element-marker">
+  <title>組織のアプリケーションテンプレートを作成します | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="組織のアプリケーションテンプレートを作成します | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/ja-jp/cloud-manager-app-template/task-define-templates.html" />
+	<meta property="og:description" content="ネットアップが提供する「アクション」を 1 つ以上選択し、組織がリソース作成の最適化を開始するために使用できるアプリケーションテンプレートを迅速に構築します。" />
+  <meta property="og:image" content="https://docs.netapp.com/ja-jp/cloud-manager-app-template/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="ネットアップが提供する「アクション」を 1 つ以上選択し、組織がリソース作成の最適化を開始するために使用できるアプリケーションテンプレートを迅速に構築します。">
+  <meta name="keywords" content=" templates, resource templates, services templates, volume templates, cvo working environment template, find volumes"><!-- Icons -->
+  <link rel="icon" href="/ja-jp/cloud-manager-app-template/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/ja-jp/cloud-manager-app-template/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/cloud-manager-app-template/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/ja-jp/cloud-manager-app-template/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/cloud-manager-app-template/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/ja-jp/cloud-manager-app-template/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/ja-jp/cloud-manager-app-template/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/ja-jp/cloud-manager-app-template/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/ja-jp/cloud-manager-app-template/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/ja-jp/cloud-manager-app-template/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/ja-jp/cloud-manager-app-template/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/ja-jp/cloud-manager-app-template/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/cloud-manager-app-template/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/cloud-manager-app-template/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/ja-jp/cloud-manager-app-template/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/ja-jp/cloud-manager-app-template/css/tabbed-blocks.css" type="text/css">
+  <link rel='stylesheet' href='/ja-jp/cloud-manager-app-template/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><link rel="stylesheet" href='/ja-jp/cloud-manager-app-template/css/product-family.css' type="text/css">
+  <script src='/ja-jp/cloud-manager-app-template/js/product-family.js'></script><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/ja-jp/cloud-manager-app-template/js/na-search.js'></script><script src='/ja-jp/cloud-manager-app-template/js/na-pagenav.js'></script><link rel='stylesheet' href='/ja-jp/cloud-manager-app-template/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/ja-jp/cloud-manager-app-template/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/ja-jp/cloud-manager-app-template/js/na-utility.js'></script>
+  <script src='/ja-jp/cloud-manager-app-template/js/clouddocs.js'></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    var head = document.getElementsByTagName('head')[0];
+    var adobe = document.createElement("script");
+    adobe.type = "text/javascript";
+    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+    head.appendChild(adobe);
+  }
+  </script>
+  <script src='/ja-jp/cloud-manager-app-template/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/ja-jp/cloud-manager-app-template/js/toc.js'></script>
+  <script src='/ja-jp/cloud-manager-app-template/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
+  <script>
+  if (document.location.hostname === "docs.netapp.com") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-81697994-3');
+  }
+  </script>
+  <script src='/ja-jp/cloud-manager-app-template/js/version-dropdown.js'></script>
+  <script src='/ja-jp/cloud-manager-app-template/js/FileSaver.min.js'></script>
+  <script src='/ja-jp/cloud-manager-app-template/js/jszip-utils.min.js'></script>
+  <script src='/ja-jp/cloud-manager-app-template/js/jszip.min.js'></script>
+  <script src='/ja-jp/cloud-manager-app-template/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-app-template/issues/new?body=Page%3A%20[組織のアプリケーションテンプレートを作成します](https://docs.netapp.com/ja-jp/cloud-manager-app-template/task-define-templates.html)" class="page-nav-contribute-link" role="button"><img src="/ja-jp/cloud-manager-app-template/images/discuss-sm.svg" class="github-icon" />ドキュメントの変更をリクエスト</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-app-template/blob/main/task-define-templates.adoc" class="page-nav-contribute-link" role="button"><img src="/ja-jp/cloud-manager-app-template/images/edit-sm.svg" class="github-icon" />GitHub で編集</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/ja-jp/cloud-manager-app-template/images/article-sm.svg" class="github-icon" />寄稿者向けガイド</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">このページ</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">製品とソリューション</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">サポートとトレーニング</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">コミュニティ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">ブログ</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">ユーザ事例</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">お問い合わせ</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/ja-jp/cloud-manager-app-template/search.html"
+          data-type="widget" 
+          data-placeholder="ドキュメントを検索" 
+          data-no-results-found="{query}に該当する結果はありません" 
+          data-did-you-mean="{suggestion} を検索" 
+          data-no-results-found-did-you-mean="{query} に該当する結果はありません。{suggestion} の間違いではありませんか?" 
+          data-results-found="{hitCount} 件見つかりました"  
+          data-sk-es-pf-indexes=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">日本語</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-app-template/task-define-templates.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/cloud-manager-app-template/task-define-templates.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-app-template/task-define-templates.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-app-template/task-define-templates.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/ja-jp/cloud-manager-app-template/images/pdf.png" width="16" height="16"/>利用可能なPDF<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        <a target="_blank" href="/ja-jp/cloud-manager-app-template/pdfs/fullsite-sidebar/AppTemplate_のドキュメント.pdf" >
+          <img src="/ja-jp/cloud-manager-app-template/images/pdf.png" width="16" height="16"/>このドキュメントサイトのPDF</a>
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/cloud-manager-app-template/pdfs/sidebar/はじめに.pdf" 
+            
+          >
+            <img src="/ja-jp/cloud-manager-app-template/images/pdf.png" width="16" height="16"/>
+            はじめに
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/cloud-manager-app-template/pdfs/sidebar/アプリケーションテンプレートを使用します.pdf" 
+            
+          >
+            <img src="/ja-jp/cloud-manager-app-template/images/pdf.png" width="16" height="16"/>
+            アプリケーションテンプレートを使用します
+          </a>
+          
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/cloud-manager-app-template/pdfs/sidebar/テンプレートを使用して_リソース作成を標準化します.pdf" 
+            
+          >
+            <img src="/ja-jp/cloud-manager-app-template/images/pdf.png" width="16" height="16"/>
+            テンプレートを使用して、リソース作成を標準化します
+          </a>
+          
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/ja-jp/cloud-manager-app-template/pdfs/pages/task-define-templates.pdf" >
+    <img src="/ja-jp/cloud-manager-app-template/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/cloud-manager-app-template/pdfs/sidebar/タグを使用してリソースを整理します.pdf" 
+            
+          >
+            <img src="/ja-jp/cloud-manager-app-template/images/pdf.png" width="16" height="16"/>
+            タグを使用してリソースを整理します
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/cloud-manager-app-template/pdfs/sidebar/概念.pdf" 
+            
+          >
+            <img src="/ja-jp/cloud-manager-app-template/images/pdf.png" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/ja-jp/cloud-manager-app-template/pdfs/sidebar/知識とサポート.pdf" 
+            
+          >
+            <img src="/ja-jp/cloud-manager-app-template/images/pdf.png" width="16" height="16"/>
+            知識とサポート
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/ja-jp/cloud-manager-app-template/images/pdf-zip.png" width="16" height="16"/>
+      <pre>個別のPDFドキュメントのコレクション<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="sidebar-nav-container">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
+        Cloud Manager のすべてのドキュメント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/cloud-manager-app-template/index.html">
+        アプリケーションテンプレートドキュメント
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/cloud-manager-app-template/whats-new.html">
+        リリースノート
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> はじめに</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/cloud-manager-app-template/concept-resource-templates.html">
+        アプリケーションテンプレートについて説明します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/cloud-manager-app-template/concept-tagging.html">
+        タグ付けの詳細をご覧ください
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> アプリケーションテンプレートを使用します</div>
+      </a>
+      <ul><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> テンプレートを使用して、リソース作成を標準化します</div>
+      </a>
+      <ul><li class="  active "><a class="na-navbar-padding" href="/ja-jp/cloud-manager-app-template/task-define-templates.html">
+        組織のテンプレートを作成します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/cloud-manager-app-template/task-check-template-compliance.html">
+        テンプレートのコンプライアンスについては、リソースを確認してください
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/cloud-manager-app-template/task-run-templates.html">
+        テンプレートを実行してリソースを作成する
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> タグを使用してリソースを整理します</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/cloud-manager-app-template/task-using-tags.html">
+        リソースのタグを管理します
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 概念</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/cloud-manager-app-template/reference-template-building-blocks.html">
+        テンプレートのビルディングブロック
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> 知識とサポート</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/ja-jp/cloud-manager-app-template/task-support-registration.html">
+        サポートに登録します
+      </a></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/cloud-manager-app-template/task-get-help.html">
+        ヘルプを表示します
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/ja-jp/cloud-manager-app-template/legal-notices.html">
+        法的通知
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/ja-jp/cloud/">Cloud Docs</a>
+        </li>
+        
+
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/ja-jp/cloud-manager-app-template/">AppTemplate</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> 日本語は機械翻訳による参考訳です。内容に矛盾や不一致があった場合には、英語の内容が優先されます。 </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">組織のアプリケーションテンプレートを作成します</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-04-01 14:58:16 +0000">04/01/2022</time>
+    
+  
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>ネットアップが提供する「アクション」を 1 つ以上選択し、組織がリソース作成の最適化を開始するために使用できるアプリケーションテンプレートを迅速に構築します。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="クイックスタート">クイックスタート</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>これらの手順を実行すると、すぐに作業を開始できます。また、残りのセクションまでスクロールして詳細を確認することもできます。</p>
+</div>
+<div class="ulist">
+<div class="title">&lt;span class="image"&gt;&lt;img src="<a href="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"" class="bare">https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png"</a> Alt="one "&gt;&lt;/span&gt; 必要な前提条件を確認します</div>
+<ul>
+<li>
+<p>ユーザがテンプレートを使用して Cloud Volumes ONTAP 、オンプレミス ONTAP 、または Azure NetApp Files システム用のボリュームを作成する前に、ボリュームを導入する適切な作業環境にアクセスできることを確認してください。</p>
+</li>
+<li>
+<p>クラウドサービス「 action 」をテンプレートに追加する場合（など） <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html" target="_blank" rel="noopener">"クラウドバックアップ"</a> または <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html" target="_blank" rel="noopener">"クラウドデータの意味"</a>をクリックして、ご使用の環境でサービスがアクティブでライセンスされていることを確認してください。</p>
+</li>
+</ul>
+</div>
+<div class="ulist quick-margin-para">
+<ul>
+<li>
+<p>AppTemplate* サービスを選択し、 * エディタ * タブをクリックして、テンプレートで使用するアクションを選択します。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph quick-margin-para">
+<p>作成手順に従い、テンプレートによって実行されるアクションを定義します。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="要件">要件</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>以下の要件を読み、サポートされている構成になっていることを確認してください。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>コネクタがない場合は、 <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html" target="_blank" rel="noopener">"コネクターの作成方法を参照してください"</a> AWS 、 Azure 、 GCP 向け。</p>
+</li>
+<li>
+<p>Cloud Volumes ONTAP ボリュームテンプレートを作成する際には、 Cloud Volumes ONTAP 作業環境がユーザに利用できることを確認してください。で Cloud Volumes ONTAP システムを起動する方法を参照してください <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html" target="_blank" rel="noopener">"AWS"</a>、 <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html" target="_blank" rel="noopener">"Azure"</a>または、のいずれかです <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html" target="_blank" rel="noopener">"GCP"</a>。</p>
+</li>
+<li>
+<p>オンプレミスの ONTAP ボリュームテンプレートを作成する場合は、オンプレミスの ONTAP 作業環境がユーザに利用できることを確認します。方法を参照してください <a href="https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html" target="_blank" rel="noopener">"オンプレミスの ONTAP システムを検出"</a> をクリックします。</p>
+</li>
+<li>
+<p>Azure NetApp Files ボリュームテンプレートを作成する際には、 Azure NetApp Files の作業環境がユーザに割り当てられていることを確認します。方法を参照してください <a href="https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-anf.html" target="_blank" rel="noopener">"Azure NetApp Files 作業環境を作成します"</a> をクリックします。</p>
+</li>
+<li>
+<p>クラウドバックアップを使用してテンプレート内のボリュームをバックアップする場合は、環境が Cloud Backup をアクティブ化していることを確認してください。</p>
+</li>
+<li>
+<p>クラウドデータセンスを使用してテンプレート内のボリュームをスキャンする場合は、クラウドデータセンスがアクティブ化されていることを確認してください。</p>
+</li>
+<li>
+<p>テンプレートでレプリケーションを有効にする場合、オンプレミスの ONTAP ボリューム用のテンプレートを使用するには、 ONTAP クラスタにアクティブな SnapMirror ライセンスが必要です。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="テンプレートを使用してリソースを作成する例">テンプレートを使用してリソースを作成する例</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>リソーステンプレートを使用して、新しいボリュームや新しい Cloud Volumes ONTAP 作業環境を作成できます。</p>
+</div>
+<div class="sect2">
+<h3 id="cloud-volumes-ontap-ボリュームのテンプレートを作成します">Cloud Volumes ONTAP ボリュームのテンプレートを作成します</h3>
+<div class="paragraph">
+<p>を参照してください <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-provisioning-storage.html#creating-flexvol-volumes" target="_blank" rel="noopener">"Cloud Volumes ONTAP ボリュームをプロビジョニングする方法"</a> Cloud Volumes ONTAP ボリュームテンプレートで実行する必要があるすべてのパラメータの詳細については、を参照してください。</p>
+</div>
+<div class="paragraph">
+<p>この例では、「データベース用の CVO ボリューム」という名前のテンプレートを作成し、次の 2 つのアクションを含めます。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes ONTAP ボリュームを作成します</p>
+<div class="paragraph">
+<p>AWS 環境のボリュームを 100GB のストレージで設定し、 Snapshot ポリシーを「 default 」に設定し、 Storage Efficiency を有効にします。</p>
+</div>
+</li>
+<li>
+<p>Cloud Backup を有効にします</p>
+<div class="paragraph">
+<p>30 個の日単位バックアップ、 13 個の週単位バックアップ、 3 個の月単位バックアップを作成します（ _3 カ月保持ポリシーを使用）。</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>* AppTemplate* サービスを選択し、 * Templates * タブをクリックして、 * Add New Template * をクリックします。</p>
+<div class="paragraph">
+<p>Select_a Template_page が表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_primary_action_cvo.png" alt="このテンプレートを使用して実行する主なアクションの選択方法を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>作成するリソースのタイプとして * Cloud Volumes ONTAP + Backup * のボリュームを選択し、 * Get Started * をクリックします。</p>
+<div class="paragraph">
+<p>Cloud Volumes ONTAP アクション定義ページでのボリュームの作成（ _Create Volume in Action Definition_page ）が表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_define_action_cvo.png" alt="入力が必要な空の CVO テンプレートを示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>* アクション名 * ：オプションで、デフォルト値の代わりにカスタマイズされたアクション名を入力します。</p>
+</li>
+<li>
+<p>* コンテキスト： * Cloud Volumes ONTAP 作業環境コンテキストを入力します（必要な場合）。</p>
+<div class="paragraph">
+<p>ユーザが既存の作業環境からテンプレートを起動すると、この情報は自動的に入力されます。</p>
+</div>
+<div class="paragraph">
+<p>ユーザが（作業環境ではなく） Templates Dashboard からテンプレートを起動する際には、作業環境とボリュームを作成する SVM を選択する必要があります。そのため、これらのフィールドは「編集可能」としてマークされます。</p>
+</div>
+</li>
+<li>
+<p>* 詳細： * ボリュームの名前とサイズを入力します。</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">フィールド</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリューム名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">フィールド内をクリックし、 5 つのオプションのいずれかを選択します。任意の名前を入力するには、 * Free Text * を選択します。ボリューム名に特定のプレフィックスまたはサフィックスを付けるか、 _contains_certain 文字を指定するか、または入力した正規表現（ regex ）のルールに従うように指定することもできます。たとえば、「 db 」には必須のプレフィックス、サフィックス、またはに次の名前を指定できます。「 db_vol1 」、「 vol1_db 」、「 vol_db_1 」などのボリューム名を追加するようユーザに要求できます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリュームサイズ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">許容値の範囲を指定することも、固定サイズを指定することもできます。この値は GB 単位です。この例では、固定値 <strong>100</strong> を追加できます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">タグ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">このボリュームに関連付けるタグの名前と値のペアを入力します。たとえば、タグ名に「コストセンター」を追加し、コストセンターコード「 655829 」を値として追加できます。タグ名と値のペアをさらに追加することで、ボリュームに複数のタグを関連付けることができます。</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>* 保護： * 「 default 」またはその他のポリシーを選択して Snapshot コピーを作成するか、 Snapshot コピーを作成しない場合は「 None 」を選択します。</p>
+</li>
+<li>
+<p>* 使用プロファイル： * ネットアップの Storage Efficiency 機能をボリュームに適用するかどうかを選択します。これには、シンプロビジョニング、重複排除、圧縮が含まれます。この例では、 Storage Efficiency を有効にしておきます。</p>
+</li>
+<li>
+<p>* ディスクタイプ：クラウドストレージプロバイダとディスクタイプを選択ディスクの選択によっては、最小および最大の IOPS またはスループット（ MB/ 秒）値を選択することもできます。基本的には、特定の Quality of Service （ QoS ；サービス品質）を定義します。</p>
+</li>
+<li>
+<p>* プロトコルオプション： * NFS * または * SMB * を選択して、ボリュームのプロトコルを設定します。次に、プロトコルの詳細を指定します。</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">NFS フィールド</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access Control の略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリュームへのアクセスにアクセス制御が必要かどうかを選択します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エクスポートポリシー</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリュームにアクセスできるサブネット内のクライアントを定義するエクスポートポリシーを作成します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NFS バージョン</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリュームの NFS バージョンを選択します。 <em>nfsv3_or_nfsv4</em> 、またはその両方を選択できます。</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">SMB フィールド</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">共有名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">フィールド内をクリックし、 5 つのオプションのいずれかを選択します。任意の名前（フリーテキスト）を入力するか、共有名に特定のプレフィックスまたはサフィックスを付加する、 _contains_certain 文字を使用する、または入力した正規表現（ regex ）のルールに従うように指定できます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">権限</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザとグループ（アクセス制御リストまたは ACL とも呼ばれる）の共有へのアクセスのレベルを選択します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザ / グループ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ローカルまたはドメインの Windows ユーザまたはグループ、あるいは UNIX ユーザまたはグループを指定します。ドメインの Windows ユーザ名を指定する場合は、 domain\username 形式でユーザのドメインを指定する必要があります。</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>* 階層化： * ボリュームに適用する階層化ポリシーを選択します。このボリュームからオブジェクトストレージにコールドデータを階層化しない場合は、「なし」に設定します。</p>
+<div class="paragraph">
+<p>を参照してください <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html#volume-tiering-policies" target="_blank" rel="noopener">"ボリューム階層化ポリシー"</a> 概要については、およびを参照してください <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html" target="_blank" rel="noopener">"使用頻度の低いデータをオブジェクトストレージに階層化します"</a> をクリックして、環境が階層化用に設定されていることを確認してください。</p>
+</div>
+</li>
+<li>
+<p>このアクションに必要なパラメーターを定義したら、 * 適用 * をクリックする。</p>
+<div class="paragraph">
+<p>テンプレートの値が正しく入力されている場合は、 [ ボリュームを Cloud Volumes ONTAP に作成 ] ボックスに緑のチェックマークが追加されます。</p>
+</div>
+</li>
+<li>
+<p>Enable Cloud Backup on Volume * ボックスをクリックします。 Cloud Backup on Volume Action Definition_Dialog が表示され、 Cloud Backup の詳細を入力できます。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_add_action.png" alt="作成したボリュームに追加できるその他の操作を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>3 カ月保持 * バックアップ・ポリシーを選択し、 30 個の日単位、 13 個の週単位、 3 個の月単位バックアップを作成します。</p>
+</li>
+<li>
+<p>[Working Environment] フィールドと [Volume Name] フィールドの下には、バックアップを有効にするボリュームを指定するために使用する 3 つの選択肢があります。を参照してください <a href="#Pass values between template actions">これらのフィールドの入力方法</a>。</p>
+</li>
+<li>
+<p>[ 適用 ] をクリックすると、 [ クラウドバックアップ ] ダイアログが保存されます。</p>
+</li>
+<li>
+<p>左上に、データベース * （この例では）のテンプレート名 * CVO ボリュームを入力してください。</p>
+</li>
+<li>
+<p>[* 設定とドリフト * ] をクリックして、このテンプレートを他の同様のテンプレートと区別できるように、より詳細な概要を提供します。したがって、テンプレート全体のドリフトを有効にしてから、 [ * 適用 * ] をクリックします。</p>
+<div class="paragraph">
+<p>ドリフトを使用すると、 Cloud Manager は、このテンプレートの作成時に入力したパラメータのハードコーディング値を監視できます。</p>
+</div>
+</li>
+<li>
+<p>[ テンプレートの保存 *] をクリックします。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>テンプレートが作成され、新しいテンプレートが表示されるテンプレートダッシュボードに戻ります。</p>
+</div>
+<div class="paragraph">
+<p>を参照してください <a href="#What to do after you have created the template">テンプレートについてユーザに説明する必要がある内容</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure-netapp-files-ボリュームのテンプレートを作成します">Azure NetApp Files ボリュームのテンプレートを作成します</h3>
+<div class="paragraph">
+<p>Azure NetApp Files ボリュームのテンプレートは、 Cloud Volumes ONTAP ボリュームのテンプレートを作成する場合と同じ方法で作成します。</p>
+</div>
+<div class="paragraph">
+<p>を参照してください <a href="https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-anf-volumes.html#creating-volumes" target="_blank" rel="noopener">"Azure NetApp Files ボリュームをプロビジョニングする方法"</a> ANF ボリュームテンプレートで実行する必要があるすべてのパラメータの詳細については、を参照してください。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>* AppTemplate* サービスを選択し、 * Templates * タブをクリックして、 * Add New Template * をクリックします。</p>
+<div class="paragraph">
+<p>Select_a Template_page が表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_primary_action_blank.png" alt="このテンプレートを使用して実行する主なアクションの選択方法を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>[ 空白のテンプレート ] を選択し、 [ 開始 ] をクリックします。</p>
+</li>
+<li>
+<p>作成するリソースのタイプとして * Azure NetApp Files でボリュームを作成 * を選択し、 * 適用 * をクリックします。</p>
+<div class="paragraph">
+<p>Azure NetApp Files アクション定義ページでのボリュームの作成（ _Create Volume in Action Definition_page ）が表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_define_action_anf.png" alt="入力する必要がある空の ANF テンプレートを示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>* アクション名 * ：オプションで、デフォルト値の代わりにカスタマイズされたアクション名を入力します。</p>
+</li>
+<li>
+<p>* ボリュームの詳細： * ボリュームの名前とサイズを入力します。必要に応じて、ボリュームのタグを指定することもできます。</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">フィールド</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリューム名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">フィールド内をクリックし、 5 つのオプションのいずれかを選択します。任意の名前を入力するには、 * Free Text * を選択します。ボリューム名に特定のプレフィックスまたはサフィックスを付けるか、 _contains_certain 文字を指定するか、または入力した正規表現（ regex ）のルールに従うように指定することもできます。たとえば、「 db 」には必須のプレフィックス、サフィックス、またはに次の名前を指定できます。「 db_vol1 」、「 vol1_db 」、「 vol_db_1 」などのボリューム名を追加するようユーザに要求できます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリュームサイズ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">許容値の範囲を指定することも、固定サイズを指定することもできます。この値は GB 単位です。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">タグ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">このボリュームに関連付けるタグの名前と値のペアを入力します。たとえば、タグ名に「コストセンター」を追加し、コストセンターコード「 655829 」を値として追加できます。タグ名と値のペアをさらに追加することで、ボリュームに複数のタグを関連付けることができます。</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>* プロトコル：ボリュームのプロトコルを設定するには、 * nfsv3 * 、 * NFSv4.1 * 、または * smb * を選択します。次に、プロトコルの詳細を指定します。</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">NFS フィールド</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリュームパス</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 つのオプションのいずれかを選択します。管理者が任意のパスを入力できるようにするには、 * フリーテキスト * を選択するか、パス名に特定の接頭辞または接尾辞を付けるか、 _contains_certain 文字を使用するか、または入力した正規表現（ regex ）の規則に従うように指定します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エクスポートポリシールール</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリュームにアクセスできるサブネット内のクライアントを定義するエクスポートポリシーを作成します。</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">SMB フィールド</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリュームパス</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5 つのオプションのいずれかを選択します。管理者が任意のパスを入力できるようにするには、 * フリーテキスト * を選択するか、パス名に特定の接頭辞または接尾辞を付けるか、 _contains_certain 文字を使用するか、または入力した正規表現（ regex ）の規則に従うように指定します。</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>* コンテキスト： * Azure NetApp Files 作業環境、新規または既存の Azure NetApp Files アカウントの詳細、およびその他の詳細を入力します。</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">フィールド</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">作業環境</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ストレージ管理者ユーザが既存の作業環境からテンプレートを起動すると、この情報は自動的に入力されます。ユーザが（作業環境ではなく） Templates Dashboard からテンプレートを起動する場合、ボリュームを作成する作業環境を選択する必要があります。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ネットアップアカウント名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">アカウントに使用する名前を入力します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure サブスクリプション ID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure サブスクリプション ID を入力します。これは、「 2b04f26-7de6-42eb-9234-e2903d7s327 」のような形式のフル ID です。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">地域</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">を使用してリージョンを入力します <a href="https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.documents.locationnames?view=azure-dotnet#fields" target="_blank" rel="noopener">"内部リージョン名"</a>。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">リソースグループ名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">使用するリソースグループの名前を入力します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Capacity Pool Name の略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">既存の容量プールの名前を入力します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">サブネット</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VNet とサブネットを入力します。この値には、完全パスが含まれます。形式は「 /subscription/&lt;subscription_id&gt;/resourceGroups/&lt;resource_group&gt;/provider/Microsoft.Network/virtualNetworks/&lt;vpc_name&gt;/subnets/&lt;subhet_name&gt;" です。</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>* Snapshot コピー： * 既存のボリュームの特性を使用して新しいボリュームを作成する場合は、既存のボリューム Snapshot の Snapshot ID を入力します。</p>
+</li>
+<li>
+<p>このアクションに必要なパラメーターを定義したら、 * 適用 * をクリックする。</p>
+</li>
+<li>
+<p>テンプレートに使用する名前を左上に入力します。</p>
+</li>
+<li>
+<p>[* 設定とドリフト * ] をクリックして、このテンプレートを他の同様のテンプレートと区別できるように、より詳細な概要を提供します。したがって、テンプレート全体のドリフトを有効にしてから、 [ * 適用 * ] をクリックします。</p>
+<div class="paragraph">
+<p>ドリフトを使用すると、 Cloud Manager は、このテンプレートの作成時に入力したパラメータのハードコーディング値を監視できます。</p>
+</div>
+</li>
+<li>
+<p>[ テンプレートの保存 *] をクリックします。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>テンプレートが作成され、新しいテンプレートが表示されるテンプレートダッシュボードに戻ります。</p>
+</div>
+<div class="paragraph">
+<p>を参照してください <a href="#What to do after you have created the template">テンプレートについてユーザに説明する必要がある内容</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="オンプレミスの-ontap-ボリューム用のテンプレートを作成します">オンプレミスの ONTAP ボリューム用のテンプレートを作成します</h3>
+<div class="paragraph">
+<p>を参照してください <a href="https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-provisioning-ontap.html#creating-volumes-for-ontap-clusters" target="_blank" rel="noopener">"オンプレミスの ONTAP ボリュームをプロビジョニングする方法"</a> オンプレミスの ONTAP ボリュームテンプレートで実行する必要があるすべてのパラメータの詳細については、を参照してください。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>* AppTemplate* サービスを選択し、 * Templates * タブをクリックして、 * Add New Template * をクリックします。</p>
+<div class="paragraph">
+<p>Select_a Template_page が表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_primary_action_blank.png" alt="このテンプレートを使用して実行する主なアクションの選択方法を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>[ 空白のテンプレート ] を選択し、 [ 開始 ] をクリックします。</p>
+<div class="paragraph">
+<p>[ 新規アクションの追加（ <em>Add New Action</em>） ] ページが表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_primary_action_onprem.png" alt="新しいアクションの追加ページで主なアクションを選択する方法を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>作成するリソースのタイプとして * Create Volume in On-Premises ONTAP * を選択し、 * Apply * をクリックします。</p>
+<div class="paragraph">
+<p>オンプレミスの ONTAP アクション定義ページでのボリュームの作成（ _Create Volume in On-Premises Action Definition_page ）が表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_define_action_onprem.png" alt="入力する必要がある空のオンプレミス ONTAP テンプレートを示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>* アクション名 * ：オプションで、デフォルト値の代わりにカスタマイズされたアクション名を入力します。</p>
+</li>
+<li>
+<p>* コンテキスト： * 必要に応じて、オンプレミスの ONTAP 作業環境を入力します。</p>
+<div class="paragraph">
+<p>ユーザが既存の作業環境からテンプレートを起動すると、この情報は自動的に入力されます。</p>
+</div>
+<div class="paragraph">
+<p>ユーザが（作業環境ではなく） Templates Dashboard からテンプレートを起動する際には、作業環境、 SVM 、およびボリュームを作成するアグリゲートを選択する必要があります。</p>
+</div>
+</li>
+<li>
+<p>* 詳細： * ボリュームの名前とサイズを入力します。</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">フィールド</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリューム名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">フィールド内をクリックし、 5 つのオプションのいずれかを選択します。任意の名前を入力するには、 * Free Text * を選択します。ボリューム名に特定のプレフィックスまたはサフィックスを付けるか、 _contains_certain 文字を指定するか、または入力した正規表現（ regex ）のルールに従うように指定することもできます。たとえば、「 db 」には必須のプレフィックス、サフィックス、またはに次の名前を指定できます。「 db_vol1 」、「 vol1_db 」、「 vol_db_1 」などのボリューム名を追加するようユーザに要求できます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリュームサイズ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">許容値の範囲を指定することも、固定サイズを指定することもできます。この値は GB 単位です。この例では、固定値 <strong>100</strong> を追加できます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">タグ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">このボリュームに関連付けるタグの名前と値のペアを入力します。たとえば、タグ名に「コストセンター」を追加し、コストセンターコード「 655829 」を値として追加できます。タグ名と値のペアをさらに追加することで、ボリュームに複数のタグを関連付けることができます。</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>* 保護： * 「 default 」またはその他のポリシーを選択して Snapshot コピーを作成するか、 Snapshot コピーを作成しない場合は「 None 」を選択します。</p>
+</li>
+<li>
+<p>* 使用プロファイル： * ネットアップの Storage Efficiency 機能をボリュームに適用するかどうかを選択します。これには、シンプロビジョニング、重複排除、圧縮が含まれます。</p>
+</li>
+<li>
+<p>* プロトコルオプション： * NFS * または * SMB * を選択して、ボリュームのプロトコルを設定します。次に、プロトコルの詳細を指定します。</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">NFS フィールド</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access Control の略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリュームへのアクセスにアクセス制御が必要かどうかを選択します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">エクスポートポリシー</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリュームにアクセスできるサブネット内のクライアントを定義するエクスポートポリシーを作成します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NFS バージョン</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ボリュームの NFS バージョンを選択します。 <em>nfsv3_or_nfsv4</em> 、またはその両方を選択できます。</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">SMB フィールド</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">共有名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">フィールド内をクリックし、 5 つのオプションのいずれかを選択します。任意の名前（フリーテキスト）を入力するか、共有名に特定のプレフィックスまたはサフィックスを付加する、 _contains_certain 文字を使用する、または入力した正規表現（ regex ）のルールに従うように指定できます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">権限</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザとグループ（アクセス制御リストまたは ACL とも呼ばれる）の共有へのアクセスのレベルを選択します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ユーザ / グループ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ローカルまたはドメインの Windows ユーザまたはグループ、あるいは UNIX ユーザまたはグループを指定します。ドメインの Windows ユーザ名を指定する場合は、 domain\username 形式でユーザのドメインを指定する必要があります。</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>このアクションに必要なパラメーターを定義したら、 * 適用 * をクリックする。</p>
+<div class="paragraph">
+<p>テンプレートの値が正しく入力されている場合は、「オンプレミスの ONTAP にボリュームを作成」ボックスに緑のチェックマークが追加されます。</p>
+</div>
+</li>
+<li>
+<p>左上にテンプレート名を入力します。</p>
+</li>
+<li>
+<p>[* 設定とドリフト * ] をクリックして、このテンプレートを他の同様のテンプレートと区別できるように、より詳細な概要を提供します。したがって、テンプレート全体のドリフトを有効にしてから、 [ * 適用 * ] をクリックします。</p>
+<div class="paragraph">
+<p>ドリフトを使用すると、 Cloud Manager は、このテンプレートの作成時に入力したパラメータのハードコーディング値を監視できます。</p>
+</div>
+</li>
+<li>
+<p>[ テンプレートの保存 *] をクリックします。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>テンプレートが作成され、新しいテンプレートが表示されるテンプレートダッシュボードに戻ります。</p>
+</div>
+<div class="paragraph">
+<p>を参照してください <a href="#What to do after you have created the template">テンプレートについてユーザに説明する必要がある内容</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cloud-volumes-ontap-作業環境のテンプレートを作成します">Cloud Volumes ONTAP 作業環境のテンプレートを作成します</h3>
+<div class="paragraph">
+<p>テンプレートを使用して、シングルノードまたは高可用性 Cloud Volumes ONTAP 作業環境を作成できます。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-app-template/images/note.svg" alt="注記">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>このサポートは、現時点では AWS 環境に対してのみ提供されています。</p>
+</li>
+<li>
+<p>このテンプレートは、作業環境で最初のボリュームを作成するものではありません。ボリュームを作成するには、テンプレートに「 Create Volume in Cloud Volumes ONTAP 」アクションを追加する必要があります。</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>を参照してください <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws" target="_blank" rel="noopener">"AWS でシングルノードの Cloud Volumes ONTAP システムを起動する方法"</a> または <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html#launching-a-cloud-volumes-ontap-ha-pair-in-aws">"AWS での Cloud Volumes ONTAP HA ペア"</a> 必要な前提条件については、このテンプレートで定義する必要があるすべてのパラメータの詳細については、を参照してください。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>* AppTemplate* サービスを選択し、 * Templates * タブをクリックして、 * Add New Template * をクリックします。</p>
+<div class="paragraph">
+<p>Select_a Template_page が表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_primary_action_blank.png" alt="このテンプレートを使用して実行する主なアクションの選択方法を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>[ 空白のテンプレート ] を選択し、 [ 開始 ] をクリックします。</p>
+<div class="paragraph">
+<p>[ 新規アクションの追加（ <em>Add New Action</em>） ] ページが表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_cvo_env_aws.png" alt="新しいアクションの追加ページで主なアクションを選択する方法を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>作成するリソースのタイプとして、 * Create Working Environment in AWS （シングルノード） * または * Create Working Environment in AWS （ハイアベイラビリティ） * を選択し、 * Apply * をクリックします。</p>
+<div class="paragraph">
+<p>この例では、「 _Create Working Environment in AWS （ single node ） _page 」が表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_cvo_env_aws1.png" alt="入力が必要な空の Cloud Volumes ONTAP 作業環境テンプレートを示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>* アクション名 * ：オプションで、デフォルト値の代わりにカスタマイズされたアクション名を入力します。</p>
+</li>
+<li>
+<p>* 詳細とクレデンシャル * ：使用する AWS クレデンシャルを選択し、作業環境名を入力して、必要に応じてタグを追加します。</p>
+<div class="paragraph">
+<p>このページの一部のフィールドは、説明のために用意されています。次の表では、ガイダンスが必要なフィールドについて説明します。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">フィールド</th>
+<th class="tableblock halign-left valign-top">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">クレデンシャル</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">これらは、 Cloud Volumes ONTAP クラスタ管理アカウントのクレデンシャルです。これらのクレデンシャルを使用して、 ONTAP System Manager またはその CLI を使用して Cloud Volumes ONTAP に接続できます。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">作業環境名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Manager は、作業環境名を使用して、 Cloud Volumes ONTAP システムと Amazon EC2 インスタンスの両方に名前を付けます。また、このオプションを選択した場合は、事前定義されたセキュリティグループのプレフィックスとして名前が使用されます。フィールド内をクリックし、 5 つのオプションのいずれかを選択します。管理者が任意の名前を入力できるようにするには、 * フリーテキスト * を選択するか、作業環境名に特定の接頭辞または接尾辞を付けるか、 _contains_certain 文字を使用するか、または入力した正規表現（ regex ）の規則に従うように指定します。</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">タグ</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AWS タグは、 AWS リソースのメタデータです。Cloud Manager は、 Cloud Volumes ONTAP インスタンスおよびインスタンスに関連付けられた各 AWS リソースにタグを追加します。タグの詳細については、を参照してください <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html" target="_blank" rel="noopener">"AWS ドキュメント：「 Tagging your Amazon EC2 Resources"</a>。</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>* 場所と接続 * ：に記録したネットワーク情報を入力します <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html#aws-network-information-worksheet" target="_blank" rel="noopener">"AWS ワークシート"</a>。これには、 AWS リージョン、 VPC 、サブネット、セキュリティグループが含まれます。</p>
+<div class="paragraph">
+<p>AWS Outpost を使用している場合は、 Outpost VPC を選択して、その Outpost に単一のノードの Cloud Volumes ONTAP システムを導入できます。エクスペリエンスは、 AWS に存在する他の VPC と同じです。</p>
+</div>
+</li>
+<li>
+<p>* 認証方法 * ：使用する SSH 認証方法として、パスワードまたはキーペアを選択します。</p>
+</li>
+<li>
+<p>* データ暗号化 * ：データ暗号化なし、または AWS で管理する暗号化を選択します。</p>
+<div class="paragraph">
+<p>AWS で管理する暗号化の場合は、アカウントまたは別の AWS アカウントから別の Customer Master Key （ CMK ；カスタマーマスターキー）を選択できます。</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-setting-up-kms.html" target="_blank" rel="noopener">"Cloud 用の AWS KMS の設定方法については、こちらをご覧ください Volume ONTAP の略"</a>。</p>
+</div>
+</li>
+<li>
+<p>* 充電方法 * ：このシステムで使用する充電オプションを指定します。</p>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html" target="_blank" rel="noopener">"これらの充電方法について説明します"</a>。</p>
+</div>
+</li>
+<li>
+<p>* ネットアップサポートサイトのアカウント * ：ネットアップサポートサイトのアカウントを選択します。</p>
+</li>
+<li>
+<p>* 構成済みパッケージ *: 作業環境で作成されたボリュームのいくつかの要因を決定する 4 つの構成済みパッケージのいずれかを選択します</p>
+</li>
+<li>
+<p>* SMB 構成 * ：この作業環境で SMB を使用してボリュームを導入する場合は、 CIFS サーバと関連する構成要素をセットアップできます。</p>
+</li>
+<li>
+<p>このアクションに必要なパラメーターを定義したら、 * 適用 * をクリックする。</p>
+<div class="paragraph">
+<p>テンプレートの値が正しく入力されている場合は、「 Create Working Environment in AWS （単一ノード）」ボックスに緑のチェックマークが追加されます。</p>
+</div>
+</li>
+<li>
+<p>このテンプレートに別の操作を追加して、この作業環境用のボリュームを作成することもできます。その場合は、をクリックします <span class="image"><img src="./media/button_plus_sign_round.png" alt="プラスボタン"></span> そのアクションを追加します。方法を参照してください <a href="#Create a template for a Cloud Volumes ONTAP volume">Cloud Volumes ONTAP ボリュームのテンプレートを作成します</a> を参照してください。</p>
+</li>
+<li>
+<p>左上にテンプレート名を入力します。</p>
+</li>
+<li>
+<p>[* 設定とドリフト * ] をクリックして、このテンプレートを他の同様のテンプレートと区別できるように、より詳細な概要を提供します。したがって、テンプレート全体のドリフトを有効にしてから、 [ * 適用 * ] をクリックします。</p>
+<div class="paragraph">
+<p>ドリフトを使用すると、 Cloud Manager は、このテンプレートの作成時に入力したパラメータのハードコーディング値を監視できます。</p>
+</div>
+</li>
+<li>
+<p>[ テンプレートの保存 *] をクリックします。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>テンプレートが作成され、新しいテンプレートが表示されるテンプレートダッシュボードに戻ります。</p>
+</div>
+<div class="paragraph">
+<p>を参照してください <a href="#What to do after you have created the template">テンプレートについてユーザに説明する必要がある内容</a>。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="テンプレートを使用して既存のリソースを検索しサービスを有効にする例">テンプレートを使用して既存のリソースを検索し、サービスを有効にする例</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>既存のリソースを検索 _ アクションを使用すると、特定の作業環境を検索したり、既存のボリュームを検索したり、それらのボリュームでクラウドサービスを有効にしたりできます。このアクションにはさまざまなフィルタが用意されているため、検索対象を目的のリソースだけに絞り込むことができます。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-app-template/images/note.svg" alt="注記">
+</td>
+<td class="content">
+現時点では、 Cloud Volumes ONTAP 、オンプレミスの ONTAP 、および Azure NetApp Files システム内にのみボリュームを配置できます。また、 Cloud Volumes ONTAP とオンプレミスの ONTAP ボリュームで有効にできるのはクラウドバックアップのみです。追加のリソースとサービスは、後で利用可能になります。
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="既存のボリュームを検索し-cloud-backup-をアクティブ化します">既存のボリュームを検索し、 Cloud Backup をアクティブ化します</h3>
+<div class="paragraph">
+<p>現在の _ 既存のリソースを検索 _ アクション機能を使用すると、現在クラウドバックアップが有効になっていない Cloud Volumes ONTAP およびオンプレミス ONTAP 作業環境上のボリュームを検索できます。特定のボリュームで Cloud Backup を有効にすると、その作業環境のデフォルトのポリシーとして設定するバックアップポリシーも設定されます。そのため、作業環境の以降のすべてのボリュームで同じバックアップポリシーを使用できます。</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>* AppTemplate* サービスを選択し、 * Templates * タブをクリックして、 * Add New Template * をクリックします。</p>
+<div class="paragraph">
+<p>Select_a Template_page が表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_primary_action_blank.png" alt="このテンプレートを使用して実行する主なアクションの選択方法を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>[ 空白のテンプレート ] を選択し、 [ 開始 ] をクリックします。</p>
+<div class="paragraph">
+<p>[ 新規アクションの追加（ <em>Add New Action</em>） ] ページが表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_find_resource_action.png" alt="新しいアクションの追加ページから既存リソースを検索アクションを選択する方法を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>定義するアクションのタイプとして * 既存のリソースを検索 * を選択し、 * 適用 * をクリックします。</p>
+<div class="paragraph">
+<p>既存リソースを検索アクション定義ページが表示されます</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_define_find_resource_action1.png" alt="入力が必要な既存リソースの検索テンプレートが空白であることを示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>* アクション名 * ：デフォルト値の代わりに、カスタマイズされたアクション名を入力します。たとえば、「 Cluster ABC で大容量ボリュームを検索してバックアップを有効にする」などです。</p>
+</li>
+<li>
+<p>* リソースタイプ： * 検索するリソースのタイプを選択します。この場合は、「 * Volumes in Cloud Volumes ONTAP * 」を選択します。</p>
+<div class="paragraph">
+<p>このアクションに必要なエントリは、これだけです。「 * Continue * 」をクリックすると、環境内のすべての Cloud Volumes ONTAP システム上のすべてのボリュームのリストが表示されます。</p>
+</div>
+<div class="paragraph">
+<p>代わりに、 Cloud Backup アクションを適用する結果（この場合はボリューム）の数を減らすために、いくつかのフィルタを入力することを推奨します。</p>
+</div>
+</li>
+<li>
+<p>_Context_area では、特定の作業環境とその作業環境に関するその他の詳細を選択できます。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_define_find_resource_filter_context.png" alt="既存リソースの検索テンプレートに適用できるコンテキストフィルタを示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>[Details] 領域では、ボリューム名とボリュームサイズを選択できます。</p>
+<div class="paragraph">
+<p>ボリューム名として、フィールド内をクリックし、 5 つのオプションのいずれかを選択します。任意の名前を入力するには、 * Free Text * を選択します。ボリューム名に特定のプレフィックスまたはサフィックスを付けるか、 _contains_certain 文字を指定するか、または入力した正規表現（ regex ）のルールに従うように指定することもできます。</p>
+</div>
+<div class="paragraph">
+<p>ボリュームサイズの範囲を指定できます。たとえば、 100GiB ~ 500GiB のすべてのボリュームを指定できます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_define_find_resource_filter_details.png" alt="既存のリソースの検索テンプレートに適用できる詳細フィルタを示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>[* Continue （続行） ] をクリックすると、ページが更新され、テンプレートで定義した検索条件が表示されます。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_define_find_resource_search_criteria.png" alt="既存のリソースの検索テンプレートに対して定義した検索条件を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>[ 検索条件を今すぐテストする ] をクリックして、現在の結果を表示します。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>結果が想定どおりでない場合は、をクリックします <span class="image"><img src="./media/screenshot_edit_icon.gif" alt="鉛筆アイコンを編集します"></span> をクリックし、さらに検索条件を絞り込んでください。</p>
+</li>
+<li>
+<p>結果が正常に表示されたら、「 * 完了 * 」をクリックします。</p>
+<div class="paragraph">
+<p>完成した既存のリソースを検索アクションがエディタウィンドウに表示されます</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>プラス記号をクリックして別のアクションを追加し、 * ボリュームでクラウドバックアップを有効にする * を選択して、 * 適用 * をクリックします。</p>
+<div class="paragraph">
+<p>[Enable Cloud Backup on Volume_action_] がウィンドウに追加されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_template_add_backup_action.png" alt="テンプレートにクラウドバックアップアクションを追加する手順を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>で説明したように、バックアップ条件を定義できます <a href="#Add Backup functionality to a volume">ボリュームにバックアップ機能を追加する</a> これにより、テンプレートは、既存のリソースを検索アクションで選択したボリュームに正しいバックアップポリシーを適用します。</p>
+</li>
+<li>
+<p>[ 適用 ] をクリックして、 [ バックアップ ] アクションに加えたカスタマイズを保存し、完了したら [ テンプレートの保存 ] をクリックします。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>テンプレートが作成され、新しいテンプレートが表示されるテンプレートダッシュボードに戻ります。</p>
+</div>
+<div class="paragraph">
+<p>を参照してください <a href="#What to do after you have created the template">テンプレートについてユーザに説明する必要がある内容</a>。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="既存の作業環境を検索">既存の作業環境を検索</h3>
+<div class="paragraph">
+<p>既存のリソースを検索アクションを使用すると ' 作業環境を検索し ' ボリュームの作成などの他のテンプレートアクションを使用して ' 既存の作業環境に対して簡単にアクションを実行できます</p>
+</div>
+<div class="olist arabic">
+<div class="title">手順</div>
+<ol class="arabic">
+<li>
+<p>* AppTemplate* サービスを選択し、 * Templates * タブをクリックして、 * Add New Template * をクリックします。</p>
+<div class="paragraph">
+<p>Select_a Template_page が表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_primary_action_blank.png" alt="このテンプレートを使用して実行する主なアクションの選択方法を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>[ 空白のテンプレート ] を選択し、 [ 開始 ] をクリックします。</p>
+<div class="paragraph">
+<p>[ 新規アクションの追加（ <em>Add New Action</em>） ] ページが表示されます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_create_template_find_resource_action.png" alt="新しいアクションの追加ページから既存リソースを検索アクションを選択する方法を示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>定義するアクションのタイプとして * 既存のリソースを検索 * を選択し、 * 適用 * をクリックします。</p>
+<div class="paragraph">
+<p>既存リソースを検索アクション定義ページが表示されます</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_define_find_work_env.png" alt="入力が必要な既存リソースの検索テンプレートが空白であることを示すスクリーンショット。"></span></p>
+</div>
+</li>
+<li>
+<p>* アクション名 * ：デフォルト値の代わりに、カスタマイズされたアクション名を入力します。たとえば、「ダラスを含む作業環境を検索」とします。</p>
+</li>
+<li>
+<p>* リソースタイプ： * 検索するリソースのタイプを選択します。この場合は、 * 作業環境 * を選択します。</p>
+<div class="paragraph">
+<p>このアクションに必要なエントリは、これだけです。[* Continue * Now] をクリックすると、環境内のすべての作業環境のリストが表示されます。</p>
+</div>
+<div class="paragraph">
+<p>代わりに、いくつかのフィルタを入力して結果の数を減らすことを推奨します（この場合は作業環境）。</p>
+</div>
+</li>
+<li>
+<p>_Details_area でいくつかのフィルタを定義したら ' 特定の作業環境を選択できます</p>
+</li>
+<li>
+<p>[* Continue * （続行） ] をクリックして設定を保存し、 [* Done * （完了 * ） ] をクリックします。</p>
+</li>
+<li>
+<p>左上にテンプレート名を入力し、 [ テンプレートの保存 ] をクリックします</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>テンプレートが作成され、新しいテンプレートが表示されるテンプレートダッシュボードに戻ります。</p>
+</div>
+<div class="paragraph">
+<p>を参照してください <a href="#What to do after you have created the template">テンプレートについてユーザに説明する必要がある内容</a>。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="テンプレートを使用してサービスを有効にする例">テンプレートを使用してサービスを有効にする例</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>サービステンプレートを使用すると、新しく作成したボリュームで Cloud Backup 、 Cloud Data Sense 、 Replication （ SnapMirror ）の各サービスをアクティブ化できます。</p>
+</div>
+<div class="sect2">
+<h3 id="ボリュームにバックアップ機能を追加します">ボリュームにバックアップ機能を追加します</h3>
+<div class="paragraph">
+<p>ボリュームテンプレートを作成する場合、を使用して定期的にボリュームのバックアップを作成するテンプレートにを追加できます <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-backup-to-cloud.html" target="_blank" rel="noopener">"クラウドバックアップ"</a> サービス</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-app-template/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+この操作は Azure NetApp Files ボリュームには適用されません。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_template_backup.png" alt="ボリュームのバックアップ機能を有効にするページのスクリーンショット。"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>* Policy * ：使用するバックアップポリシーを選択します。</p>
+</li>
+<li>
+<p>* コンテキスト * ：デフォルトでは、作業環境、 Storage VM 、およびボリュームには変数が設定され、同じテンプレートで以前に作成したボリュームのバックアップを作成することを示します。これが必要な場合は、すべて設定されています。</p>
+<div class="paragraph">
+<p>別のボリュームのバックアップを作成する場合は、それらの詳細を手動で入力できます。方法を参照してください <a href="reference-template-building-blocks.html#pass-values-between-template-actions">"[ コンテキスト（ Context ） </a> フィールドに入力する"] をクリックして、別のボリュームを指定します。</p>
+</div>
+</li>
+<li>
+<p>[ 適用 ] をクリックして変更を保存します。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="データセンス機能をボリュームに追加します">データセンス機能をボリュームに追加します</h3>
+<div class="paragraph">
+<p>ボリュームテンプレートを作成するときに、を使用してボリュームのコンプライアンスと分類をスキャンするテンプレートにを追加できます <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html" target="_blank" rel="noopener">"クラウドデータの意味"</a> サービス</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_template_data_sense.png" alt="ボリュームのスキャン機能を有効にするページのスクリーンショット。"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>* コンテキスト * ：デフォルトでは、作業環境、ボリューム名、ボリューム UUID 、ボリュームパス、およびプロトコルの変数が入力されます。これは、この同じテンプレートで以前に作成したボリュームのデータをスキャンすることを示します。これが必要な場合は、すべて設定されています。</p>
+<div class="paragraph">
+<p>別のボリュームのデータをスキャンする場合は、それらの詳細を手動で入力できます。方法を参照してください <a href="reference-template-building-blocks.html#pass-values-between-template-actions">"[ コンテキスト（ Context ） </a> フィールドに入力する"] をクリックして、別のボリュームを指定します。</p>
+</div>
+</li>
+<li>
+<p>[ 適用 ] をクリックして変更を保存します。</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ボリュームにレプリケーション機能を追加します">ボリュームにレプリケーション機能を追加します</h3>
+<div class="paragraph">
+<p>ボリュームテンプレートを作成するときに、を使用してボリューム内のデータを別のボリュームにレプリケートするテンプレートにを追加できます <a href="https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication.html">"レプリケーション"</a> サービスデータは、 Cloud Volumes ONTAP クラスタまたはオンプレミスの ONTAP クラスタにレプリケートできます。</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-app-template/images/tip.svg" alt="ヒント">
+</td>
+<td class="content">
+この操作は Azure NetApp Files ボリュームには適用されません。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>レプリケーション機能は、ソースボリュームの選択、デスティネーションボリュームの選択、レプリケーション設定の定義の 3 つの部分で構成されます。各セクションについて以下で説明します。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>* ソースの詳細 * ：レプリケートするソースボリュームの詳細を入力します。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_template_replication_source.png" alt="レプリケーションソースボリュームの場所を定義するページのスクリーンショット。"></span></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>デフォルトでは、作業環境、 Storage VM 、およびボリュームについて、最初の 3 つの変数が入力されます。これは、同じテンプレートで以前に作成したボリュームをレプリケートすることを示します。これが必要な場合は、すべて設定されています。</p>
+<div class="paragraph">
+<p>別のボリュームをレプリケートする場合は、それらの詳細を手動で入力できます。方法を参照してください <a href="reference-template-building-blocks.html#pass-values-between-template-actions">"[ コンテキスト（ Context ） </a> フィールドに入力する"] をクリックして、別のボリュームを指定します。</p>
+</div>
+</li>
+<li>
+<p>レプリケーションを実行するには、ソースとデスティネーションの作業環境がそれぞれのクラスタ間 LIF を介して接続されている必要があります。ソース作業環境のクラスタ間 LIF の IP アドレスを入力します。</p>
+<div class="paragraph">
+<p>この情報を取得するには、作業環境をダブルクリックし、メニューアイコンをクリックして、 [ 情報 ] をクリックします。</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>* デスティネーションの詳細 * ：レプリケーション処理によって作成されるデスティネーションボリュームの詳細を入力します。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_template_replication_dest.png" alt="レプリケーションのデスティネーションボリュームの場所を定義するページのスクリーンショット。"></span></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>ボリュームを作成する作業環境を選択します。</p>
+</li>
+<li>
+<p>ボリュームを配置する Storage VM を選択します。</p>
+</li>
+<li>
+<p>ボリュームを（オンプレミスの ONTAP クラスタではなく） Cloud Volumes ONTAP クラスタにレプリケートする場合は、デスティネーションプロバイダ（ AWS 、 Azure 、 GCP ）を指定する必要があります。</p>
+</li>
+<li>
+<p>ボリュームを Cloud Volumes ONTAP クラスタにレプリケートするときに、デスティネーションボリュームでボリューム階層化が有効になっているかどうかを指定することができます。</p>
+</li>
+<li>
+<p>デスティネーションボリューム名について、フィールドをクリックし、 5 つのオプションのいずれかを選択します。任意の名前を入力するには、 * Free Text * を選択します。ボリューム名に特定のプレフィックスまたはサフィックスを付けるか、 _contains_certain 文字を指定するか、または入力した正規表現（ regex ）のルールに従うように指定することもできます。</p>
+</li>
+<li>
+<p>レプリケーションを実行するには、ソースとデスティネーションの作業環境がそれぞれのクラスタ間 LIF を介して接続されている必要があります。デスティネーション作業環境のクラスタ間 LIF の IP アドレスを入力します。</p>
+</li>
+<li>
+<p>ボリュームを配置するアグリゲートを選択します。</p>
+</li>
+<li>
+<p>ボリュームを（オンプレミスの ONTAP クラスタではなく） Cloud Volumes ONTAP クラスタにレプリケートする場合は、新しいボリュームに使用するディスクのタイプを指定する必要があります。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>* レプリケーションの詳細 * ：レプリケーション操作のタイプと頻度に関する詳細を入力します。</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_template_replication_policy.png" alt="関係のレプリケーション設定を定義するページのスクリーンショット。"></span></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>を選択します <a href="https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication-policies.html#types-of-replication-policies" target="_blank" rel="noopener">"レプリケーションポリシー"</a> を使用します。</p>
+</li>
+<li>
+<p>1 回限りのコピーまたは繰り返し実行するレプリケーションスケジュールを選択します。</p>
+</li>
+<li>
+<p>遅延時間、ステータス、および前回の転送時間に加えて、 SnapMirror 関係のレプリケーションの健常性もドリフトレポートに含める場合は、レプリケーションの健常性ステータスの監視を有効にします。 <a href="task-check-template-compliance.html#replication-health-details-in-the-drift-report">"ドリフトレポートでは、このような内容を確認できます"</a>。</p>
+</li>
+<li>
+<p>転送速度の上限を設定するかどうかを選択し、データの転送速度の上限（ 1 秒あたりのキロバイト数）を入力します。固定値を入力するか、または最小値と最大値を指定して、ストレージ管理者にその範囲の値を選択させることができます。</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>[ 適用 ] をクリックして変更を保存します。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="テンプレートの作成後の作業">テンプレートの作成後の作業</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>テンプレートを作成したら、新しい作業環境およびボリュームを作成する際にテンプレートを使用するようストレージ管理者に通知する必要があります。</p>
+</div>
+<div class="paragraph">
+<p>それらをに示すことができます <a href="task-run-templates.html">"テンプレートを使用したリソースの作成"</a> を参照してください。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="テンプレートを編集または削除します">テンプレートを編集または削除します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>パラメータを変更する必要がある場合は、テンプレートを変更できます。変更を保存すると、テンプレートから作成された以降のすべてのリソースに新しいパラメータ値が使用されます。</p>
+</div>
+<div class="paragraph">
+<p>不要になったテンプレートを削除することもできます。テンプレートを削除しても、そのテンプレートで作成されたリソースには影響しません。ただし、テンプレートを削除した後にドリフトコンプライアンスチェックを実行することはできません。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_template_edit_remove.png" alt="テンプレートを変更または削除する方法を示すスクリーンショット。"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="テンプレートのコピーを作成します">テンプレートのコピーを作成します</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>既存のテンプレートのコピーを作成できます。これにより、既存のテンプレートと非常によく似た新しいテンプレートを作成する場合に、時間を大幅に節約できます。新しい名前で複製を作成し、テンプレートを編集して、テンプレートを一意にする結合アイテムを変更することができます。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_template_duplicate.png" alt="テンプレートを複製する方法を示すスクリーンショット。"></span></p>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+
+</ul>
+</div>
+<div class="n-footer__social-links">
+<ul class="n-footer__social-link-list">
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
+<span class="n-footer__social-link-text">blog</span>
+<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+  <title>blog@</title>
+  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#blog"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
+<span class="n-footer__social-link-text">community</span>
+<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+<title>community@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#comments"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
+<span class="n-footer__social-link-text">twitter</span>
+<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+<title>twitter@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#twitter"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
+<span class="n-footer__social-link-text">facebook</span>
+<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+<title>facebook@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#facebook"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+<span class="n-footer__social-link-text">linkedin</span>
+<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+<title>linkedin@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#linkedin"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+<span class="n-footer__social-link-text">youtube</span>
+<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+<title>youtube@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#youtube"></use>
+</svg>
+
+</a>
+</li>
+<li class="n-footer__social-link-list-item">
+<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+<span class="n-footer__social-link-text">slideshare</span>
+<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+<title>slideshare@</title>
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ja-jp/cloud-manager-app-template/common/svg/sprite.svg#slideshare"></use>
+</svg>
+
+</a>
+</li>
+</ul>
+</div>
+
+</div>
+<div class="n-footer__bottom-right">
+  <p class="n-footer__fine-print">Web サイトについてのフィードバックを<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">お寄せください</a>
+  <a href="https://docs.netapp.com/ja-jp/announcements/" class="n-footer__copyright">お知らせ</a>
+  </p>
+</div>
+</div>
+</div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/ja-jp/cloud-manager-app-template/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/ja-jp/cloud-manager-app-template/js/prism.js'></script>
+      <script type="text/javascript" src='/ja-jp/cloud-manager-app-template/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/ja-jp/cloud-manager-app-template/js/www-ntap.js'></script>
+    <script src='/ja-jp/cloud-manager-app-template/js/tabbed-blocks.js'></script>
+  </body></html>
