@@ -23,13 +23,13 @@ summary: アプリケーションテンプレートとタグ付けの新機能�
 
 === テンプレートを作成して、特定の作業環境を検索できるようになりました。
 
-「既存のリソースを検索」アクションを使用すると、作業環境を特定してから、ボリュームの作成などの他のテンプレートアクションを使用して、既存の作業環境に対して簡単にアクションを実行できます。 link:task-define-templates.html#examples-of-finding-existing-resources-and-enabling-services-using-templates["詳細については、こちらをご覧ください"]。
+「既存のリソースを検索」アクションを使用すると、作業環境を特定してから、ボリュームの作成などの他のテンプレートアクションを使用して、既存の作業環境に対して簡単にアクションを実行できます。 https://docs.netapp.com/us-en/cloud-manager-app-template/task-define-templates.html#examples-of-finding-existing-resources-and-enabling-services-using-templates["詳細については、こちらをご覧ください"]。
 
 
 
 === AWS で Cloud Volumes ONTAP HA 作業環境を作成できる。
 
-AWS での Cloud Volumes ONTAP 作業環境の作成は、既存のサポートが拡張されて、シングルノードシステムに加えて高可用性システムも作成できるようになりました。 link:task-define-templates.html#create-a-template-for-a-cloud-volumes-ontap-working-environment["Cloud Volumes ONTAP 作業環境用のテンプレートの作成方法については、を参照してください"]。
+AWS での Cloud Volumes ONTAP 作業環境の作成は、既存のサポートが拡張されて、シングルノードシステムに加えて高可用性システムも作成できるようになりました。 https://docs.netapp.com/us-en/cloud-manager-app-template/task-define-templates.html#create-a-template-for-a-cloud-volumes-ontap-working-environment["Cloud Volumes ONTAP 作業環境用のテンプレートの作成方法については、を参照してください"]。
 
 
 
@@ -41,7 +41,7 @@ AWS での Cloud Volumes ONTAP 作業環境の作成は、既存のサポート�
 
 新しい「リソース検索」アクションを使用すると、 Cloud Backup を有効にするすべてのボリュームを特定し、 Cloud Backup アクションを使用してそれらのボリュームのバックアップを有効にできます。
 
-現在サポートされているのは、 Cloud Volumes ONTAP 上のボリュームとオンプレミスの ONTAP システムです。 link:task-define-templates.html#find-existing-volumes-and-activate-cloud-backup["詳細については、こちらをご覧ください"]。
+現在サポートされているのは、 Cloud Volumes ONTAP 上のボリュームとオンプレミスの ONTAP システムです。 https://docs.netapp.com/us-en/cloud-manager-app-template/task-define-templates.html#find-existing-volumes-and-activate-cloud-backup["詳細については、こちらをご覧ください"]。
 
 
 
@@ -51,7 +51,7 @@ AWS での Cloud Volumes ONTAP 作業環境の作成は、既存のサポート�
 
 === これで、同期関係にタグを付けて、簡単にアクセスできるように関係をグループ化または分類できます。
 
-link:concept-tagging.html["リソースタグ付けの詳細については、こちらをご覧ください"]。
+https://docs.netapp.com/us-en/cloud-manager-app-template/concept-tagging.html["リソースタグ付けの詳細については、こちらをご覧ください"]。
 
 
 
