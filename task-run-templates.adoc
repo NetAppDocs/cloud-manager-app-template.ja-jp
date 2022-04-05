@@ -61,8 +61,8 @@ summary: 組織が構築したアプリケーションテンプレートの中�
 
 どの方法を選択する場合でも、定義する必要があるボリュームの必須パラメータに関する詳細を以下のセクションで確認できます。
 
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-provisioning-storage.html#creating-volumes-from-templates["Cloud Volumes ONTAP ボリュームをプロビジョニングする方法"^]
-* https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-anf-volumes.html#creating-volumes-from-templates["Azure NetApp Files ボリュームをプロビジョニングする方法"^]
+* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html#create-a-volume-from-a-template["Cloud Volumes ONTAP ボリュームをプロビジョニングする方法"^]
+* https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-create-volumes.html#create-volumes-from-templates["Azure NetApp Files ボリュームをプロビジョニングする方法"^]
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-provisioning-ontap.html#creating-volumes-from-templates["オンプレミスの ONTAP ボリュームをプロビジョニングする方法"^]
 
 

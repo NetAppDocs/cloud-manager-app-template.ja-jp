@@ -43,7 +43,7 @@ summary: ネットアップが提供する「アクション」を 1 つ以上�
 * コネクタがない場合は、 https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["コネクターの作成方法を参照してください"^] AWS 、 Azure 、 GCP 向け。
 * Cloud Volumes ONTAP ボリュームテンプレートを作成する際には、 Cloud Volumes ONTAP 作業環境がユーザに利用できることを確認してください。で Cloud Volumes ONTAP システムを起動する方法を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html["AWS"^]、 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Azure"^]または、のいずれかです https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-gcp.html["GCP"^]。
 * オンプレミスの ONTAP ボリュームテンプレートを作成する場合は、オンプレミスの ONTAP 作業環境がユーザに利用できることを確認します。方法を参照してください https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["オンプレミスの ONTAP システムを検出"^] をクリックします。
-* Azure NetApp Files ボリュームテンプレートを作成する際には、 Azure NetApp Files の作業環境がユーザに割り当てられていることを確認します。方法を参照してください https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-manage-anf.html["Azure NetApp Files 作業環境を作成します"^] をクリックします。
+* Azure NetApp Files ボリュームテンプレートを作成する際には、 Azure NetApp Files の作業環境がユーザに割り当てられていることを確認します。方法を参照してください https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-quick-start.html["Azure NetApp Files 作業環境を作成します"^] をクリックします。
 * クラウドバックアップを使用してテンプレート内のボリュームをバックアップする場合は、環境が Cloud Backup をアクティブ化していることを確認してください。
 * クラウドデータセンスを使用してテンプレート内のボリュームをスキャンする場合は、クラウドデータセンスがアクティブ化されていることを確認してください。
 * テンプレートでレプリケーションを有効にする場合、オンプレミスの ONTAP ボリューム用のテンプレートを使用するには、 ONTAP クラスタにアクティブな SnapMirror ライセンスが必要です。
@@ -59,7 +59,7 @@ summary: ネットアップが提供する「アクション」を 1 つ以上�
 
 === Cloud Volumes ONTAP ボリュームのテンプレートを作成します
 
-を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-provisioning-storage.html#creating-flexvol-volumes["Cloud Volumes ONTAP ボリュームをプロビジョニングする方法"^] Cloud Volumes ONTAP ボリュームテンプレートで実行する必要があるすべてのパラメータの詳細については、を参照してください。
+を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html["Cloud Volumes ONTAP ボリュームをプロビジョニングする方法"^] Cloud Volumes ONTAP ボリュームテンプレートで実行する必要があるすべてのパラメータの詳細については、を参照してください。
 
 この例では、「データベース用の CVO ボリューム」という名前のテンプレートを作成し、次の 2 つのアクションを含めます。
 
@@ -156,7 +156,7 @@ image:screenshot_create_template_define_action_cvo.png["入力が必要な空の
 image:screenshot_create_template_add_action.png["作成したボリュームに追加できるその他の操作を示すスクリーンショット。"]
 
 . 3 カ月保持 * バックアップ・ポリシーを選択し、 30 個の日単位、 13 個の週単位、 3 個の月単位バックアップを作成します。
-. [Working Environment] フィールドと [Volume Name] フィールドの下には、バックアップを有効にするボリュームを指定するために使用する 3 つの選択肢があります。を参照してください <<Pass values between template actions,これらのフィールドの入力方法>>。
+. [Working Environment] フィールドと [Volume Name] フィールドの下には、バックアップを有効にするボリュームを指定するために使用する 3 つの選択肢があります。を参照してください link:reference-template-building-blocks.html#pass-values-between-template-actions["これらのフィールドの入力方法"]。
 . [ 適用 ] をクリックすると、 [ クラウドバックアップ ] ダイアログが保存されます。
 . 左上に、データベース * （この例では）のテンプレート名 * CVO ボリュームを入力してください。
 . [* 設定とドリフト * ] をクリックして、このテンプレートを他の同様のテンプレートと区別できるように、より詳細な概要を提供します。したがって、テンプレート全体のドリフトを有効にしてから、 [ * 適用 * ] をクリックします。
@@ -382,7 +382,7 @@ image:screenshot_create_template_define_action_onprem.png["入力する必要が
 
 
 ====
-を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws["AWS でシングルノードの Cloud Volumes ONTAP システムを起動する方法"^] または https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html#launching-a-cloud-volumes-ontap-ha-pair-in-aws["AWS での Cloud Volumes ONTAP HA ペア"] 必要な前提条件については、このテンプレートで定義する必要があるすべてのパラメータの詳細については、を参照してください。
+を参照してください https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html#launching-a-single-node-cloud-volumes-ontap-system-in-aws["AWS でシングルノードの Cloud Volumes ONTAP システムを起動する方法"^] または https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-aws.html#launching-a-cloud-volumes-ontap-ha-pair-in-aws["AWS での Cloud Volumes ONTAP HA ペア"^] 必要な前提条件については、このテンプレートで定義する必要があるすべてのパラメータの詳細については、を参照してください。
 
 .手順
 . * AppTemplate* サービスを選択し、 * Templates * タブをクリックして、 * Add New Template * をクリックします。
@@ -637,7 +637,7 @@ image:screenshot_template_data_sense.png["ボリュームのスキャン機能�
 
 === ボリュームにレプリケーション機能を追加します
 
-ボリュームテンプレートを作成するときに、を使用してボリューム内のデータを別のボリュームにレプリケートするテンプレートにを追加できます https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication.html["レプリケーション"] サービスデータは、 Cloud Volumes ONTAP クラスタまたはオンプレミスの ONTAP クラスタにレプリケートできます。
+ボリュームテンプレートを作成するときに、を使用してボリューム内のデータを別のボリュームにレプリケートするテンプレートにを追加できます https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication.html["レプリケーション"^] サービスデータは、 Cloud Volumes ONTAP クラスタまたはオンプレミスの ONTAP クラスタにレプリケートできます。
 
 
 TIP: この操作は Azure NetApp Files ボリュームには適用されません。
