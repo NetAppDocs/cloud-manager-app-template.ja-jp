@@ -18,11 +18,11 @@ sidebar:
     url: "/whats-new.html"
   - title: はじめに
     entries:
-    - title: アプリケーションテンプレートについて説明します
+    - title: AppTemplate について説明します
       url: "/concept-resource-templates.html"
     - title: タグ付けの詳細をご覧ください
       url: "/concept-tagging.html"
-  - title: アプリケーションテンプレートを使用します
+  - title: AppTemplate を使用します
     entries:
     - title: テンプレートを使用して、リソース作成を標準化します
       entries:
@@ -52,7 +52,7 @@ homepage:
   tiles:
   - title: はじめに
     links:
-    - title: アプリケーションテンプレートについては、こちらをご覧ください
+    - title: AppTemplate について説明します
       url: concept-resource-templates.html
     - title: タグ付けの詳細はこちら
       url: concept-tagging.html
@@ -68,12 +68,8 @@ homepage:
       url: task-define-templates.html#create-a-template-for-an-azure-netapp-files-volume
     - title: オンプレミスの ONTAP ボリューム
       url: task-define-templates.html#create-a-template-for-an-on-premises-ontap-volume
-    - title: ボリュームにバックアップ機能を追加します
-      url: task-define-templates.html#add-backup-functionality-to-a-volume
-    - title: データセンス機能をボリュームに追加します
-      url: task-define-templates.html#add-data-sense-functionality-to-a-volume
-    - title: ボリュームにレプリケーション機能を追加します
-      url: task-define-templates.html#add-replication-functionality-to-a-volume
+    - title: ボリュームにバックアップ、データセンス、またはレプリケーション機能を追加します
+      url: task-define-templates.html#examples-of-enabling-services-using-templates
   - title: テンプレートを使用してリソースを作成する
     links:
     - title: Cloud Volumes ONTAP 作業環境

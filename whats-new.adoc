@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: whats-new.html 
 keywords: 'what"s new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes' 
-summary: アプリケーションテンプレートとタグ付けの新機能について説明します。 
+summary: AppTemplate と Tagging の新機能について説明します。 
 ---
-= アプリケーションテンプレートとタグ付けの新機能
+= AppTemplate と Tagging の新機能
 :hardbreaks:
 :nofooter: 
 :icons: font
@@ -13,7 +13,7 @@ summary: アプリケーションテンプレートとタグ付けの新機能�
 
 
 [role="lead"]
-アプリケーションテンプレートとタグ付けの新機能について説明します。
+AppTemplate と Tagging の新機能について説明します。
 
 
 
@@ -21,13 +21,13 @@ summary: アプリケーションテンプレートとタグ付けの新機能�
 
 
 
-=== テンプレートを作成して、特定の作業環境を検索できるようになりました。
+=== テンプレートを作成して、特定の作業環境を検索できるようになりました
 
 「既存のリソースを検索」アクションを使用すると、作業環境を特定してから、ボリュームの作成などの他のテンプレートアクションを使用して、既存の作業環境に対して簡単にアクションを実行できます。 https://docs.netapp.com/us-en/cloud-manager-app-template/task-define-templates.html#examples-of-finding-existing-resources-and-enabling-services-using-templates["詳細については、こちらをご覧ください"]。
 
 
 
-=== AWS で Cloud Volumes ONTAP HA 作業環境を作成できる。
+=== AWS で Cloud Volumes ONTAP HA 作業環境を作成できる
 
 AWS での Cloud Volumes ONTAP 作業環境の作成は、既存のサポートが拡張されて、シングルノードシステムに加えて高可用性システムも作成できるようになりました。 https://docs.netapp.com/us-en/cloud-manager-app-template/task-define-templates.html#create-a-template-for-a-cloud-volumes-ontap-working-environment["Cloud Volumes ONTAP 作業環境用のテンプレートの作成方法については、を参照してください"]。
 
@@ -37,7 +37,7 @@ AWS での Cloud Volumes ONTAP 作業環境の作成は、既存のサポート�
 
 
 
-=== テンプレートを作成して特定の既存ボリュームを検索し、 Cloud Backup を有効にすることができます。
+=== テンプレートを作成して特定の既存ボリュームを検索し、 Cloud Backup を有効にすることができます
 
 新しい「リソース検索」アクションを使用すると、 Cloud Backup を有効にするすべてのボリュームを特定し、 Cloud Backup アクションを使用してそれらのボリュームのバックアップを有効にできます。
 
@@ -49,7 +49,7 @@ AWS での Cloud Volumes ONTAP 作業環境の作成は、既存のサポート�
 
 
 
-=== これで、同期関係にタグを付けて、簡単にアクセスできるように関係をグループ化または分類できます。
+=== これで、同期関係にタグを付けて、簡単にアクセスできるように関係をグループ化または分類できます
 
 https://docs.netapp.com/us-en/cloud-manager-app-template/concept-tagging.html["リソースタグ付けの詳細については、こちらをご覧ください"]。
 
@@ -59,19 +59,19 @@ https://docs.netapp.com/us-en/cloud-manager-app-template/concept-tagging.html["�
 
 
 
-=== 既存のテンプレートの複製を作成できるようになりました。
+=== 既存のテンプレートの複製を作成できるようになりました
 
 既存のテンプレートと非常によく似た新しいテンプレートを作成する場合、複製を作成すると時間を大幅に節約できます。複製を新しい名前で作成し、テンプレートを一意にする結合アイテムを変更するだけです。 link:task-define-templates.html#make-a-copy-of-a-template["テンプレートのコピーを作成する方法については、を参照してください"]。
 
 
 
-=== テンプレートを使用して作成したボリュームでサービスを有効にする方がはるかに簡単になりました。
+=== テンプレートを使用して作成したボリュームでサービスを有効にする方がはるかに簡単になりました
 
 作業環境、 Storage VM 、およびボリューム名を特定する変数を事前に選択しておく必要があります。これで、この情報がテンプレートに追加されました。これにより、新しく作成したボリュームへの Cloud Backup 、 Cloud Compliance 、および Replication のサービスの追加が簡単になります。
 
 
 
-=== サポートが追加され、特定の GCP リソースにラベルを付けることができます。
+=== サポートが追加され、特定の GCP リソースにラベルを付けることができます
 
 Cloud Manager Tagging サービスを使用して、 GCP リソースのラベルを管理できるようになりました。リソースに適用されている GCP ラベルとラベル値を表示したり、管理している他の GCP リソースにそれらのラベルを適用したりできます。 link:concept-tagging.html#resources-that-you-can-tag["ラベルを付けることができる GCP リソースを表示します"]。
 
@@ -81,13 +81,13 @@ Cloud Manager Tagging サービスを使用して、 GCP リソースのラベ�
 
 
 
-=== これで、タグ付けサービスを使用して Azure リソースのタグを管理できるようになりました。
+=== これで、タグ付けサービスを使用して Azure リソースのタグを管理できるようになりました
 
 リソースに適用されている Azure のタグとタグの値を確認し、それらのタグを管理している他の Azure リソースに適用することができます。 link:concept-tagging.html#resources-that-you-can-tag["タグ付け可能な Azure リソースを確認する"]。
 
 
 
-=== これで、 AWS EC2 リソースのタグを追加で設定できます。
+=== これで、 AWS EC2 リソースのタグを追加で設定できます
 
 
 
@@ -95,19 +95,19 @@ Cloud Manager Tagging サービスを使用して、 GCP リソースのラベ�
 
 
 
-=== テンプレートを使用して Cloud Volumes ONTAP 作業環境を作成できるようになりました。
+=== テンプレートを使用して Cloud Volumes ONTAP 作業環境を作成できるようになりました
 
 現時点では AWS 環境のみがサポートされ、シングルノードクラスタのみがサポートされます。方法を参照してください link:task-define-templates.html#create-a-template-for-a-cloud-volumes-ontap-working-environment["Cloud Volumes ONTAP 作業環境のテンプレートを作成します"]。
 
 
 
-=== 新しい機能を使用すると、ボリュームテンプレート内のボリュームにタグを追加できます。
+=== 新しい機能を使用すると、ボリュームテンプレート内のボリュームにタグを追加できます
 
 タグ付けを使用すると、さまざまなリソースをグループ化してアプリケーション、リージョン、または部門を特定し、自動化を実行したり、特定の部門や地域にコストを割り当てることができます。
 
 
 
-=== Cloud Manager で AWS EC2 インスタンスからタグを管理できるようになりました。
+=== Cloud Manager で AWS EC2 インスタンスからタグを管理できるようになりました
 
 EC2 インスタンスに適用されている AWS のタグとタグの値を表示して、それらのタグを管理している他の EC2 インスタンスに適用することができます。 link:concept-tagging.html["タグ付けの詳細をご覧ください"]。
 
@@ -117,7 +117,7 @@ EC2 インスタンスに適用されている AWS のタグとタグの値を�
 
 
 
-=== テンプレートを定義するときに Replication サービスを使用するためのサポートが追加されました。
+=== テンプレートを定義するときに Replication サービスを使用するためのサポートが追加されました
 
 これで、必要なテンプレートを追加できます link:task-define-templates.html#add-replication-functionality-to-a-volume["作成するボリュームにデータをレプリケートします"] を使用して別のボリュームに移動します https://docs.netapp.com/us-en/cloud-manager-replication/concept-replication.html["レプリケーションサービス"]。
 
@@ -125,13 +125,13 @@ EC2 インスタンスに適用されている AWS のタグとタグの値を�
 
 
 
-=== テンプレート設定から、「ドリフト」されたすべてのボリュームを含むレポートをダウンロードします。
+=== テンプレート設定から、「ドリフト」されたすべてのボリュームを含むレポートをダウンロードします
 
 このようにして、これらのボリュームを特定し、ボリュームをコンプライアンスに戻す誰かを割り当てることができます。を参照してください link:task-check-template-compliance.html#create-a-drift-report-for-non-compliant-resources["ドリフトレポートをダウンロードする方法"]。
 
 
 
-=== 新しいタグ付けサービスがリリースされました。
+=== 新しいタグ付けサービスがリリースされました
 
 Cloud Manager の新機能を使用すると、既存の ONTAP リソースにタグを適用して、リソースを整理および管理できるようになります。タグは、リソースをグループ化してアプリケーション、環境、リージョン、課金コード、クラウドプロバイダを識別するために使用できるメタデータです。 その他。
 
@@ -143,17 +143,19 @@ link:concept-tagging.html["タグ付けの詳細をご覧ください"]。
 
 
 
-=== これで、ユーザーがテンプレートを実行しているときに、条件付きで特定のアクションを有効にできます。
+=== これで、ユーザーがテンプレートを実行しているときに、条件付きで特定のアクションを有効にできます
 
 たとえば、ネットアップの Storage Efficiency を有効にして Cloud Volumes ONTAP ボリュームを作成した場合、そのボリュームで Cloud Backup も有効になります。Storage Efficiency が有効になっていない場合、 Cloud Backup は有効になりません。
 
 
 
-=== テンプレートを使用してオンプレミスの ONTAP システムにボリュームを作成できるようになりました。
+=== テンプレートを使用してオンプレミスの ONTAP システムにボリュームを作成できるようになりました
+
+AppTemplate を使用すると、テンプレートを使用して既存の作業環境にボリュームを作成できます。
 
 
 
-=== テンプレートの作成時に、「ドリフト」という新しい機能がオプションとして追加されました。
+=== テンプレートの作成時に、「ドリフト」という新しい機能がオプションとして追加されました
 
 この機能を使用すると、 Cloud Manager で、テンプレート内のパラメータに入力したハードコーディングされた値を監視できます。テンプレートを使用してボリュームを作成したあと、 Cloud Manager がパラメータ値が変更されてテンプレート定義に合わせられなくなったと認識した場合は、設計したテンプレートから「ドリフト」のあるすべてのボリュームを表示できます。こうすることで、これらのボリュームを特定し、変更を加えてコンプライアンスに戻すことができます。
 
@@ -163,6 +165,6 @@ link:concept-tagging.html["タグ付けの詳細をご覧ください"]。
 
 
 
-=== ボリュームテンプレートの作成時に Cloud Data Sense を統合できるようになりました。
+=== ボリュームテンプレートの作成時に Cloud Data Sense を統合できるようになりました
 
 新しく作成した各ボリュームに対してデータセンスを有効にしたり、新しく作成した各ボリュームに対して Cloud Backup を有効にしたり、作成したボリュームに対してバックアップとコンプライアンスの両方を有効にするテンプレートを作成したりできます。
