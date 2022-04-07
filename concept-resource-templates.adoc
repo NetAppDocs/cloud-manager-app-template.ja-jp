@@ -6,6 +6,7 @@ summary: AppTemplate サービスを使用すると、作業環境でのリソ�
 ---
 = AppTemplate について説明します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: 組織が構築したアプリケーションテンプレートの中�
 ---
 = テンプレートを使用してリソースを作成または変更する
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

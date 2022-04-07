@@ -6,6 +6,7 @@ summary: Cloud Manager では、「ドリフト」機能を使用してテンプ
 ---
 = テンプレートのコンプライアンスについては、リソースを確認してください
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

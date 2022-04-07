@@ -6,6 +6,7 @@ summary: Cloud Manager Tagging サービスを使用して、既存のリソー�
 ---
 = リソースのタグを管理します
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

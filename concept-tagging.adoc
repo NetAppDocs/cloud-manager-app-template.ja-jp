@@ -6,6 +6,7 @@ summary: Cloud Manager では、タグを _existing_resources に適用して、
 ---
 = タグ付けの詳細をご覧ください
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
