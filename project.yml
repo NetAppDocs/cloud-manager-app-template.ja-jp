@@ -12,7 +12,7 @@ sidebar:
   entries:
   - title: Cloud Manager のすべてのドキュメント
     url: https://docs.netapp.com/us-en/cloud-manager-family
-  - title: アプリケーションテンプレートドキュメント
+  - title: AppTemplate ドキュメント
     url: "/index.html"
   - title: リリースノート
     url: "/whats-new.html"

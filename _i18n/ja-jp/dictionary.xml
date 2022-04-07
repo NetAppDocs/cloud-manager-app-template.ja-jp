@@ -280,11 +280,6 @@
   <block id="daa7684c9693e9b5412a05c7d060a1ef" category="inline-image-macro">プラスボタン</block>
   <block id="abd25867aae2404fdbef96ae0b0057ee" category="inline-xref">Cloud Volumes ONTAP ボリュームのテンプレートを作成します</block>
   <block id="520d34c754a3e963e32a0fc19ab1421c" category="list-text">このテンプレートに別の操作を追加して、この作業環境用のボリュームを作成することもできます。その場合は、をクリックします <block ref="f928d2751b49d5f69d575bc7f78c5aae" category="inline-image-macro-rx" type="image"></block> そのアクションを追加します。方法を参照してください <block ref="f498f1e6b10c72f9f04179db4da15305" category="inline-xref-macro-rx"></block> を参照してください。</block>
-  <block id="6375b33aa338dc1017d6313b28a3c363" category="section-title">テンプレートを使用して既存のリソースを検索し、サービスを有効にする例</block>
-  <block id="68f7b83818f20b7e8979e2dda6a61b21" category="paragraph">既存のリソースを検索 _ アクションを使用すると、特定の作業環境を検索したり、既存のボリュームを検索したり、それらのボリュームでクラウドサービスを有効にしたりできます。このアクションにはさまざまなフィルタが用意されているため、検索対象を目的のリソースだけに絞り込むことができます。</block>
-  <block id="595f244394c7e3873ac213fc3b4a7521" category="admonition">現時点では、 Cloud Volumes ONTAP 、オンプレミスの ONTAP 、および Azure NetApp Files システム内にのみボリュームを配置できます。また、 Cloud Volumes ONTAP とオンプレミスの ONTAP ボリュームで有効にできるのはクラウドバックアップのみです。追加のリソースとサービスは、後で利用可能になります。</block>
-  <block id="3f20fe561065439fa56df3c9ca94e6ed" category="section-title">既存のボリュームを検索し、 Cloud Backup をアクティブ化します</block>
-  <block id="0ba4ecc2c8a2452e16fbf3776c91fda1" category="paragraph">現在の _ 既存のリソースを検索 _ アクション機能を使用すると、現在クラウドバックアップが有効になっていない Cloud Volumes ONTAP およびオンプレミス ONTAP 作業環境上のボリュームを検索できます。特定のボリュームで Cloud Backup を有効にすると、その作業環境のデフォルトのポリシーとして設定するバックアップポリシーも設定されます。そのため、作業環境の以降のすべてのボリュームで同じバックアップポリシーを使用できます。</block>
   <block id="6d0c20318ee7bcc13d58fa262e33c7d2" category="inline-image-macro">新しいアクションの追加ページから既存リソースを検索アクションを選択する方法を示すスクリーンショット。</block>
   <block id="0e9d27a36a1187dea1616df501ce108d" category="paragraph"><block ref="0e9d27a36a1187dea1616df501ce108d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="11c981e1d4ed40ea0925d9ae06dae41f" category="list-text">定義するアクションのタイプとして * 既存のリソースを検索 * を選択し、 * 適用 * をクリックします。</block>
@@ -298,7 +293,6 @@
   <block id="759a269bf5c05fa6647b728a4b6acab7" category="list-text">_Context_area では、特定の作業環境とその作業環境に関するその他の詳細を選択できます。</block>
   <block id="70b9fbef4c70dff460de52b0d7c1eb40" category="inline-image-macro">既存リソースの検索テンプレートに適用できるコンテキストフィルタを示すスクリーンショット。</block>
   <block id="7a978f856247996229928441e0d8ef1d" category="paragraph"><block ref="7a978f856247996229928441e0d8ef1d" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="7ce9821e289ff97c6897cdf26f259fa8" category="list-text">[Details] 領域では、ボリューム名とボリュームサイズを選択できます。</block>
   <block id="f3ab419ac906615be19ae0d551c2ddd6" category="paragraph">ボリューム名として、フィールド内をクリックし、 5 つのオプションのいずれかを選択します。任意の名前を入力するには、 * Free Text * を選択します。ボリューム名に特定のプレフィックスまたはサフィックスを付けるか、 _contains_certain 文字を指定するか、または入力した正規表現（ regex ）のルールに従うように指定することもできます。</block>
   <block id="8567823797f59455548dc8dd1f03f80e" category="paragraph">ボリュームサイズの範囲を指定できます。たとえば、 100GiB ~ 500GiB のすべてのボリュームを指定できます。</block>
   <block id="be9642dda4ebe2b728f2c474b3d3a411" category="inline-image-macro">既存のリソースの検索テンプレートに適用できる詳細フィルタを示すスクリーンショット。</block>
@@ -394,8 +388,6 @@
   <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
   <block id="4940124e8487cb4ea36f1511a195cf66" category="inline-link-macro">Cloud Manager 3.9 に関する注意事項</block>
   <block id="c069fcc68c5dfa73ccc99924c836cae9" category="list-text"><block ref="c069fcc68c5dfa73ccc99924c836cae9" category="inline-link-macro-rx"></block></block>
-  <block id="b5b938da8856a26053eadd6c64760087" category="inline-link-macro">アプリケーションテンプレートに関する注意事項</block>
-  <block id="c5339dceaf3a5c5a6c1b7dc27a40604b" category="list-text"><block ref="c5339dceaf3a5c5a6c1b7dc27a40604b" category="inline-link-macro-rx"></block></block>
   <block id="f56a22734fbef43dcef97b492e9cd352" category="summary">アクション間で値を渡す（ボリューム名など）、アクションを相互に接続する条件付き分岐（新しいボリュームでバックアップを有効にする）、およびテンプレートを使用する際のリソースのカスタマイズに役立つテンプレートを構築する場合に使用できる機能があります。</block>
   <block id="889ecb758e53f24c9efd4553bc09c14a" category="doc">テンプレートのビルディングブロック</block>
   <block id="4312f94678a5f3a99677eff317710d96" category="section-title">特殊なテンプレートコントロール</block>
@@ -656,7 +648,6 @@
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">サポートに登録します</block>
   <block id="d53e2559d6ace0e907fc57192bf286b6" category="paragraph"><block ref="d53e2559d6ace0e907fc57192bf286b6" category="inline-link-macro-rx"></block></block>
   <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">Cloud Manager のすべてのドキュメント</block>
-  <block id="0a619ca9c1cd947e450850b3e7de049e" category="sidebar">アプリケーションテンプレートドキュメント</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">リリースノート</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">はじめに</block>
   <block id="d878dbf9ab702cfef892ea35b53108d3" category="sidebar">テンプレートを使用して、リソース作成を標準化します</block>
@@ -730,4 +721,14 @@
   <block id="98af7a1c0ade78de5b8dcbfc4ca16024" category="summary">AppTemplate サービスを使用すると、 Cloud Manager の作業環境に対するリソース作成を標準化できます。</block>
   <block id="973d48daa10556f358647cfe1cc53216" category="sidebar">AppTemplate を使用します</block>
   <block id="dc771c253d08d9cdafc72d7919e16d98" category="sidebar">ボリュームにバックアップ、データセンス、またはレプリケーション機能を追加します</block>
+  <block id="45a406745a298842b185cafcdaedc62b" category="section-title">テンプレートを使用して既存のリソースを検索する例</block>
+  <block id="f7322605429ac37b6517eaccfdebcdfe" category="paragraph">既存のリソースを検索 _action を使用すると、特定の作業環境を検索したり、さまざまなフィルタを使用して既存のボリュームを検索したりできるため、検索対象を目的のリソースだけに絞り込むことができます。正しいリソースが見つかったら、作業環境にボリュームを追加するか、作成されたボリュームでクラウドサービスを有効にすることができます。</block>
+  <block id="18bc86c303dfcce839364dfb6f86c8d7" category="admonition">この時点で、 Cloud Volumes ONTAP 、オンプレミス ONTAP 、 Azure NetApp Files システム内にボリュームを見つけることができます。また、 Cloud Volumes ONTAP とオンプレミスの ONTAP でクラウドバックアップを有効にすることもできます。追加のリソースとサービスは、後で利用可能になります。</block>
+  <block id="38e15ec3e6bd73e018349ed1f0bf12bb" category="section-title">既存のボリュームを検索し、クラウドサービスをアクティブ化</block>
+  <block id="80252c15af311783e16e6d31bb72ca0b" category="paragraph">現在の _ 既存のリソースを検索 _ アクション機能を使用すると、現在クラウドバックアップまたはクラウドデータセンスが有効になっていない Cloud Volumes ONTAP およびオンプレミス ONTAP 作業環境上のボリュームを検索できます。特定のボリュームで Cloud Backup を有効にすると、その作業環境のデフォルトポリシーとして設定したバックアップポリシーも設定されるため、作業環境の以降のすべてのボリュームで同じバックアップポリシーを使用できます。</block>
+  <block id="ad47acd6a839d467d8e7d8cc0ab575bb" category="list-text">詳細領域では、ボリューム名、ボリュームサイズの範囲、およびボリュームに割り当てられているタグを選択できます。</block>
+  <block id="75aa65993e3f52840fc5b343dbb63651" category="paragraph">タグの場合、特定のタグキー / 値ペアを含むボリュームのみが結果に表示されるように、検索をさらに絞り込むことができます。</block>
+  <block id="6fab7ff15514de4d3ca2883bd502b6e7" category="inline-link-macro">AppTemplate に関する注意事項</block>
+  <block id="775a83959890feedd00e6dc592c3e60f" category="list-text"><block ref="775a83959890feedd00e6dc592c3e60f" category="inline-link-macro-rx"></block></block>
+  <block id="01861a2435910cac249c0a1eaea3e27b" category="sidebar">AppTemplate ドキュメント</block>
 </blocks>
