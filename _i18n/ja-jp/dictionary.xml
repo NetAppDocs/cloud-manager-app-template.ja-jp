@@ -438,10 +438,7 @@
   <block id="3a07949495aa0f10524a38b2f8b42ff9" category="list-text">インフラの設計と開発を自動化し、改善します</block>
   <block id="628898f2daed85c109f1e353f32ae510" category="list-text">クラウドバックアップやクラウドデータセンスなど、さまざまな NetApp クラウドサービスを 1 箇所でアクティブ化できます</block>
   <block id="b56e74814d72e13b8bd9eb4561010dba" category="list-text">変更され、テンプレートに適合しなくなったリソースを特定します（「ドリフト」機能を使用）。</block>
-  <block id="8c1079a8c3d5e5b11329bf8605fb5f44" category="section-title">「ドリフト」とは何ですか？</block>
-  <block id="118aedda50dccbbf52d8108f072f5aed" category="paragraph">「ドリフト」を使用すると、テンプレートを使用してリソースを作成するときに使用されるパラメータ値を Cloud Manager で監視できます。この時点で、「ドリフト」はリソースがいつ変更されたかを特定できるため、手動で調整を行って、テンプレートに準拠するように戻すことができます。将来的には、リソースがコンプライアンス違反になったときに通知を送信したり、テンプレートから作成されたすべてのリソースが自動的にコンプライアンスに戻されるようにユーザーの変更を元に戻したりすることができます。</block>
   <block id="535863b7811f106bde3e7f273a118764" category="inline-link-macro">ドリフトの詳細については、こちらをご覧ください</block>
-  <block id="ab043d15e26e04a4e88771647e66f422" category="paragraph"><block ref="070f7b254d8faecc6fc5a699202bdab9" category="inline-link-macro-rx"></block>。</block>
   <block id="04d8b8693a17205c619758eaa8d300e2" category="section-title">使用可能なテンプレートアクション</block>
   <block id="1521fcd4ef1bd7f293c2968ccf8c8162" category="paragraph">テンプレートは、事前に定義された値を持つ「アクション」のチェーンです。次のアクションを含むテンプレートを作成できます。</block>
   <block id="d7b818155971ac6a308c49db2d58706d" category="paragraph">* リソースアクション： *</block>
@@ -595,7 +592,6 @@
   <block id="6f195138d995bb3980eb20df6cd6b372" category="list-text">_Reviewing_page で変更内容が正しい場合は、 * Save * をクリックします。タグキーと値のペアがリソースまたは選択したすべてのリソースから削除されます。</block>
   <block id="e1f059ce610c426bc048a916e53ae32d" category="summary">Cloud Manager では、「ドリフト」機能を使用してテンプレートを使用してリソースが作成されたときに使用されたパラメータ値を監視できます。ドリフトは、変更され、テンプレート設定に適合しなくなったリソースを識別します。</block>
   <block id="738c328d0087a068339b3d63cd01f51a" category="doc">テンプレートのコンプライアンスについては、リソースを確認してください</block>
-  <block id="8e09fe4243173c7be4058a88ee5dccbe" category="paragraph">この時点で、ドリフトはリソース内の変更されたパラメータを識別します。リソースを手動で調整して、テンプレートに準拠させる必要があります。</block>
   <block id="2ab3e4cd0d86d65f9d51ef66c0c979a1" category="section-title">ドリフトの仕組み</block>
   <block id="270a79863849b0f5a1fb6e3ca8c5e8cf" category="paragraph">ドリフトは、次のような非準拠パラメータを識別します。</block>
   <block id="2f4767232b378f442b114c6df47c9e64" category="list-text">テンプレートを作成するときに、ユーザーに変更をさせたくない特定のパラメーターのドリフトをオンにします。たとえば、テンプレートから作成されたすべてのボリュームに対して、「 default 」ポリシーを使用して Snapshot コピーの作成を要求できます。</block>
@@ -777,4 +773,6 @@
   <block id="bece28b158ab337d9ed24b00d7d02cc7" category="list-text">[ * お問い合わせ * ] をクリックして、ネットアップ・テクニカル・サポートの電話番号を検索してください。</block>
   <block id="efe81cff8e6f47ec59ef94167b76bf5a" category="list-text">[ * 問題 を開く * ] をクリックし、いずれかのオプションを選択して、 [ * 送信 * ] をクリックします。</block>
   <block id="cbb1040836732e478409dacf7e45171a" category="paragraph">ネットアップの担当者がケースを確認し、すぐに対応を開始します。</block>
+  <block id="214a61ce436e46b661501acdeee5221c" category="paragraph">この時点で、ドリフトはリソース内の変更されたパラメータを識別します。リソースを手動で調整して、テンプレートに準拠させる必要があります。将来的には、リソースがコンプライアンス違反になったときに通知を送信したり、テンプレートから作成されたすべてのリソースが自動的にコンプライアンスに戻されるようにユーザーの変更を元に戻したりすることができます。</block>
+  <block id="5bd5bf968b8be74cc15838b062223bc7" category="paragraph">この時点で、リソースをテンプレートに合わせて戻すために、手動で調整を行う必要があります。 <block ref="070f7b254d8faecc6fc5a699202bdab9" category="inline-link-macro-rx"></block>。</block>
 </blocks>
